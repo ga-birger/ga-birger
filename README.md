@@ -1,36 +1,80 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Gabriela Birger - Site Oficial
 
-## Getting Started
+Site oficial de Gabriela Birger, psicanalista e idealizadora do projeto **com.verso**.
 
-First, run the development server:
+## 🎨 Design System
 
+### Cores
+- **Verde Oliva**: `#7D8B6F`
+- **Terracota**: `#C4836D`
+- **Rosa Claro**: `#F0D9D5`
+- **Mostarda**: `#D4A84B`
+- **Creme**: `#F5EDE8`
+- **Creme Escuro**: `#EDE4DD`
+- **Preto**: `#1A1A1A`
+- **Branco**: `#FDFCFB`
+
+### Tipografia
+- **Títulos**: Cormorant Garamond (serif) - pesos 400, 500, 600, 700
+- **Texto**: DM Sans (sans-serif) - pesos 300, 400, 500
+
+## 🚀 Stack Tecnológica
+
+- **Next.js 16** (App Router)
+- **TypeScript**
+- **Tailwind CSS v4**
+- **Framer Motion** (animações)
+- **React Hook Form + Zod** (formulários)
+- **Lucide React** (ícones)
+
+## 📁 Estrutura de Páginas
+
+- `/` - Home
+- `/sobre` - Sobre Gabriela Birger
+- `/comverso` - Projeto com.verso
+- `/podcast` - Podcast
+- `/contato` - Contato
+
+## 🛠️ Desenvolvimento
+
+### Instalar dependências
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Rodar em desenvolvimento
+```bash
+npm run dev
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Acesse [http://localhost:3000](http://localhost:3000)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Build para produção
+```bash
+npm run build
+npm start
+```
 
-## Learn More
+## ✨ Características
 
-To learn more about Next.js, take a look at the following resources:
+- Design editorial sofisticado e acolhedor
+- Animações suaves com Framer Motion
+- Scroll suave
+- Textura grain sutil nos backgrounds
+- Espaço negativo generoso
+- Navegação responsiva com menu mobile
+- Transições de página fluidas
+- Hover effects animados
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 📝 Próximos Passos
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- [ ] Adicionar conteúdo nas páginas
+- [ ] Implementar formulário de contato funcional
+- [ ] Adicionar integração com podcast
+- [ ] Otimizar imagens e performance
+- [ ] Adicionar SEO avançado
+- [ ] Implementar blog/artigos
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Desenvolvido com ❤️ para Gabriela Birger
