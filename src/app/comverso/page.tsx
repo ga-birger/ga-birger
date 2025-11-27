@@ -15,7 +15,7 @@ export default function ComVerso() {
         <motion.div
           initial={{ opacity: 0, scale: 0.8, rotate: -10 }}
           animate={{ opacity: 0.05, scale: 1, rotate: 0 }}
-          transition={{ duration: 1, ease: 'easeOut' }}
+          transition={{ duration: 1 }}
           className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-preto text-[300px] md:text-[400px] font-serif pointer-events-none"
           aria-hidden="true"
         >
@@ -26,7 +26,7 @@ export default function ComVerso() {
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: 'easeOut', delay: 0.3 }}
+            transition={{ duration: 0.8, delay: 0.3 }}
           >
             <h1 className="font-serif text-6xl md:text-7xl lg:text-8xl font-semibold text-preto mb-6">
               com.verso
@@ -44,7 +44,7 @@ export default function ComVerso() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-100px' }}
-          transition={{ duration: 0.6, ease: 'easeOut' }}
+          transition={{ duration: 0.6 }}
           className="max-w-4xl mx-auto"
         >
           <h2 className="font-serif text-4xl md:text-5xl font-semibold text-preto mb-8 text-center">
@@ -85,7 +85,7 @@ export default function ComVerso() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-100px' }}
-          transition={{ duration: 0.6, ease: 'easeOut' }}
+          transition={{ duration: 0.6 }}
           className="text-center max-w-3xl mx-auto"
         >
           <div className="mb-8">

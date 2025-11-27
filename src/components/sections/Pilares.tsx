@@ -1,6 +1,6 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { motion, Variants } from 'framer-motion';
 import { BookOpen, Brain, Wine } from 'lucide-react';
 
 interface Pilar {
@@ -39,7 +39,7 @@ const pilares: Pilar[] = [
   },
 ];
 
-const containerVariants = {
+const containerVariants: Variants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
@@ -49,7 +49,7 @@ const containerVariants = {
   },
 };
 
-const itemVariants = {
+const itemVariants: Variants = {
   hidden: { opacity: 0, y: 30 },
   visible: {
     opacity: 1,
@@ -68,7 +68,7 @@ export default function Pilares() {
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: '-100px' }}
-        transition={{ duration: 0.6, ease: 'easeOut' }}
+        transition={{ duration: 0.6 }}
         className="font-serif text-4xl md:text-5xl font-semibold text-preto mb-4 text-center"
       >
         Os três pilares
@@ -78,7 +78,7 @@ export default function Pilares() {
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: '-100px' }}
-        transition={{ duration: 0.6, ease: 'easeOut', delay: 0.1 }}
+        transition={{ duration: 0.6, delay: 0.1 }}
         className="font-sans text-lg md:text-xl text-preto/60 text-center mb-16 max-w-2xl mx-auto"
       >
         O com.verso se sustenta na integração de três elementos fundamentais
@@ -131,7 +131,7 @@ export default function Pilares() {
         initial={{ opacity: 0, scale: 0.9 }}
         whileInView={{ opacity: 0.1, scale: 1 }}
         viewport={{ once: true, margin: '-100px' }}
-        transition={{ duration: 0.8, ease: 'easeOut', delay: 0.5 }}
+        transition={{ duration: 0.8, delay: 0.5 }}
         className="mt-16 text-center"
       >
         <svg

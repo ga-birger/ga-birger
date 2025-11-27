@@ -16,7 +16,7 @@ export default function Sobre() {
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: 'easeOut' }}
+            transition={{ duration: 0.8 }}
           >
             <h1 className="font-serif text-5xl md:text-6xl lg:text-7xl font-semibold text-preto mb-4">
               Gabriela Birger
@@ -44,7 +44,7 @@ export default function Sobre() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-100px' }}
-          transition={{ duration: 0.6, ease: 'easeOut' }}
+          transition={{ duration: 0.6 }}
           className="max-w-3xl mx-auto text-center"
           style={{ backgroundColor: 'var(--rosa-claro)' }}
         >

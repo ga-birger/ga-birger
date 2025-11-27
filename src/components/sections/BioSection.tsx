@@ -11,7 +11,7 @@ export default function BioSection() {
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: '-100px' }}
-        transition={{ duration: 0.6, ease: 'easeOut' }}
+        transition={{ duration: 0.6 }}
         className="order-first"
       >
         <div className="relative aspect-[3/4] w-full overflow-hidden rounded-sm sticky top-32">
@@ -31,7 +31,7 @@ export default function BioSection() {
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: '-100px' }}
-        transition={{ duration: 0.6, ease: 'easeOut', delay: 0.2 }}
+        transition={{ duration: 0.6, delay: 0.2 }}
         className="space-y-6"
       >
         <p className="font-sans text-lg md:text-xl text-preto/80 leading-relaxed">
