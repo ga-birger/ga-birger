@@ -52,10 +52,10 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
-      { url: '/favicon.ico?v=3', type: 'image/x-icon' },
+      { url: '/favicon.ico?v=4', type: 'image/x-icon' },
     ],
-    shortcut: '/favicon.ico?v=3',
-    apple: '/favicon.ico',
+    shortcut: '/favicon.ico?v=4',
+    apple: '/favicon.ico?v=4',
   },
   robots: {
     index: true,
@@ -70,6 +70,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR" className={`${cormorant.variable} ${dmSans.variable}`}>
+      <head>
+        <link rel="icon" href="/favicon.ico?v=4" sizes="any" />
+        <link rel="shortcut icon" href="/favicon.ico?v=4" />
+      </head>
       <body suppressHydrationWarning={true} className="bg-creme text-preto antialiased">
         <Header />
         <main>{children}</main>
