@@ -10,13 +10,13 @@ export default function About() {
   return (
     <section className="py-12 md:py-20 lg:py-28 bg-white">
       <Container>
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+        <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-100px' }}
             transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-            className="max-w-lg text-center lg:text-left"
+            className="text-center lg:text-left order-2 lg:order-1"
           >
             <p className="text-sm tracking-[0.25em] uppercase text-[var(--terracota)] mb-3">
               Sobre
@@ -45,9 +45,9 @@ export default function About() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-100px' }}
             transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1], delay: 0.2 }}
-            className="order-first lg:order-last"
+            className="flex justify-center order-1 lg:order-2"
           >
-            <div className="relative w-full max-w-[280px] md:max-w-sm mx-auto lg:mx-0">
+            <div className="relative w-full max-w-[280px] md:max-w-sm">
               <div className="aspect-[3/4] relative rounded-2xl overflow-hidden shadow-xl">
                 <Image
                   src="/images/gabriela-birger.jpg"

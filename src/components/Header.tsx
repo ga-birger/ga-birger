@@ -36,9 +36,9 @@ const socialLinks = [
 // Altere estes valores para mostrar/esconder a fita e mudar o conteúdo
 const EVENT_CONFIG = {
   show: true, // true para mostrar, false para esconder
-  text: 'Próximo com.verso: 12 de Dezembro',
+  text: 'Próximo com.verso: 12/Dez',
   link: 'https://www.instagram.com/_com.verso_',
-  linkText: 'Garanta sua vaga',
+  linkText: 'Saiba mais',
 }
 // =============================================
 
@@ -59,7 +59,7 @@ export default function Header() {
       <AnimatePresence>
         {showBanner && (
           <div className="bg-[var(--preto)] text-white relative">
-            <div className="flex items-center justify-center gap-2 px-4 py-2.5 text-sm">
+            <div className="flex items-center justify-center gap-2 px-4 py-2.5 text-xs md:text-sm">
               <span className="text-white/80">{EVENT_CONFIG.text}</span>
               <a 
                 href={EVENT_CONFIG.link}
@@ -148,12 +148,12 @@ export default function Header() {
             {isOpen ? (
               <>
                 <X className="w-4 h-4" />
-                <span>Fechar</span>
+                <span className="uppercase tracking-wider">Fechar</span>
               </>
             ) : (
               <>
                 <Menu className="w-4 h-4" />
-                <span>Menu</span>
+                <span className="uppercase tracking-wider">Menu</span>
               </>
             )}
           </button>

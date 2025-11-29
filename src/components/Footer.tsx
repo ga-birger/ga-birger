@@ -41,9 +41,9 @@ export default function Footer() {
               <Image
                 src="/images/brand/logo-gabriela-birger-white.png"
                 alt="Gabriela Birger"
-                width={260}
-                height={80}
-                className="h-20 w-auto object-contain"
+                width={280}
+                height={90}
+                className="h-24 w-auto object-contain"
               />
             </Link>
             
@@ -139,9 +139,9 @@ export default function Footer() {
                 <Image
                   src="/images/brand/logo-gabriela-birger-white.png"
                   alt="Gabriela Birger"
-                  width={320}
-                  height={100}
-                  className="h-24 w-auto object-contain"
+                  width={360}
+                  height={120}
+                  className="h-28 w-auto object-contain"
                 />
               </Link>
               <p className="text-white/60 text-sm leading-relaxed max-w-sm">
