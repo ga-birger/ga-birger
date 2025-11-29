@@ -51,11 +51,7 @@ export const metadata: Metadata = {
     images: ['/images/og-image.jpg'],
   },
   icons: {
-    icon: [
-      { url: '/favicon.ico?v=4', type: 'image/x-icon' },
-    ],
-    shortcut: '/favicon.ico?v=4',
-    apple: '/favicon.ico?v=4',
+    icon: '/favicon.ico',
   },
   robots: {
     index: true,
@@ -70,10 +66,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR" className={`${cormorant.variable} ${dmSans.variable}`}>
-      <head>
-        <link rel="icon" href="/favicon.ico?v=4" sizes="any" />
-        <link rel="shortcut icon" href="/favicon.ico?v=4" />
-      </head>
       <body suppressHydrationWarning={true} className="bg-creme text-preto antialiased">
         <Header />
         <main>{children}</main>
