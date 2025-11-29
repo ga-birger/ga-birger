@@ -14,7 +14,7 @@ export default function BioSection() {
         transition={{ duration: 0.6 }}
         className="order-first"
       >
-        <div className="relative aspect-[3/4] w-full overflow-hidden rounded-sm sticky top-32">
+        <div className="relative aspect-[3/4] w-full overflow-hidden rounded-xl sticky top-32">
           <Image
             src="/images/gabriela-birger.jpg"
             alt="Gabriela Birger - Psicanalista"
