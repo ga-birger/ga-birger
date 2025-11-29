@@ -16,7 +16,7 @@ export default function About() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-100px' }}
             transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-            className="max-w-lg"
+            className="max-w-lg text-center lg:text-left"
           >
             <p className="text-sm tracking-[0.25em] uppercase text-[var(--terracota)] mb-3">
               Sobre
@@ -29,13 +29,15 @@ export default function About() {
               Université Paris 1. Idealizadora do com.verso, um espaço de reflexão
               que integra psicanálise, filosofia e bons vinhos.
             </p>
-            <Link
-              href="/sobre"
-              className="inline-flex items-center gap-2 px-6 py-3 border border-[var(--preto)]/20 text-sm tracking-wider rounded-lg hover:border-[var(--preto)] hover:bg-[var(--preto)] hover:text-white transition-all duration-300 group"
-            >
-              Conheça mais
-              <ArrowRight size={16} className="transition-transform duration-300 group-hover:translate-x-1" />
-            </Link>
+            <div className="flex justify-center lg:justify-start">
+              <Link
+                href="/sobre"
+                className="inline-flex items-center gap-2 px-6 py-3 border border-[var(--preto)]/20 text-sm tracking-wider rounded-lg hover:border-[var(--preto)] hover:bg-[var(--preto)] hover:text-white transition-all duration-300 group"
+              >
+                Conheça mais
+                <ArrowRight size={16} className="transition-transform duration-300 group-hover:translate-x-1" />
+              </Link>
+            </div>
           </motion.div>
 
           <motion.div

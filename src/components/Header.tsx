@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
-import { Menu, X, Instagram } from 'lucide-react'
+import { Menu, X, Instagram, ChevronRight } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
 
 const WhatsAppIcon = ({ className }: { className?: string }) => (
@@ -55,48 +55,31 @@ export default function Header() {
 
   return (
     <>
-      {/* FITA DE EVENTO - MARQUEE */}
+      {/* FITA DE EVENTO - FIXA */}
       <AnimatePresence>
         {showBanner && (
-          <div className="bg-[var(--preto)] text-white overflow-hidden relative">
+          <div className="bg-[var(--preto)] text-white relative">
+            <div className="flex items-center justify-center gap-2 px-4 py-2.5 text-sm">
+              <span className="text-white/80">{EVENT_CONFIG.text}</span>
+              <a 
+                href={EVENT_CONFIG.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1 text-[var(--mostarda)] hover:text-white transition-colors font-medium"
+              >
+                {EVENT_CONFIG.linkText}
+                <ChevronRight className="w-4 h-4" />
+              </a>
+            </div>
+            
             {/* Botão fechar */}
             <button
               onClick={() => setShowBanner(false)}
-              className="absolute right-2 top-1/2 -translate-y-1/2 z-10 p-1 text-white/50 hover:text-white transition-colors"
+              className="absolute right-3 top-1/2 -translate-y-1/2 p-1 text-white/50 hover:text-white transition-colors"
               aria-label="Fechar"
             >
-              <X className="w-3 h-3" />
+              <X className="w-4 h-4" />
             </button>
-            
-            {/* Texto animado */}
-            <div className="py-2 pr-8">
-              <motion.div
-                animate={{ x: ['0%', '-50%'] }}
-                transition={{ 
-                  duration: 15, 
-                  repeat: Infinity, 
-                  ease: 'linear' 
-                }}
-                className="flex whitespace-nowrap"
-              >
-                {[...Array(2)].map((_, i) => (
-                  <span key={i} className="flex items-center gap-8 text-sm mr-8">
-                    <span className="flex items-center gap-2">
-                      <span className="w-1.5 h-1.5 bg-[var(--mostarda)] rounded-full" />
-                      <span>{EVENT_CONFIG.text}</span>
-                      <a 
-                        href={EVENT_CONFIG.link}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-[var(--mostarda)] hover:text-white transition-colors font-medium"
-                      >
-                        {EVENT_CONFIG.linkText} →
-                      </a>
-                    </span>
-                  </span>
-                ))}
-              </motion.div>
-            </div>
           </div>
         )}
       </AnimatePresence>
