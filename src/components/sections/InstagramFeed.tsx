@@ -8,7 +8,7 @@ import { Container } from '@/components/ui/Container';
 
 export default function InstagramFeed() {
   return (
-    <section className="py-20 md:py-28 lg:py-32 bg-[var(--creme)]">
+    <section className="py-12 md:py-20 lg:py-28 bg-[var(--creme)]">
       <Container>
         <motion.div
           initial={{ opacity: 0, y: 40 }}

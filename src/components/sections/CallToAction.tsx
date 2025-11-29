@@ -7,7 +7,7 @@ import { Container } from '@/components/ui/Container';
 
 export default function CallToAction() {
   return (
-    <section className="py-20 md:py-28 lg:py-32 bg-[#C4836D]">
+    <section className="py-12 md:py-20 lg:py-28 bg-[#C4836D]">
       <Container className="text-center">
         <motion.div
           initial={{ opacity: 0, y: 40 }}

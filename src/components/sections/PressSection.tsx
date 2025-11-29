@@ -7,7 +7,7 @@ import { ArrowUpRight } from 'lucide-react'
 
 export function PressSection() {
   return (
-    <section className="py-20 md:py-28 bg-(--creme)">
+    <section className="py-12 md:py-20 lg:py-28 bg-creme">
       <Container>
         <motion.div
           initial={{ opacity: 0, y: 20 }}

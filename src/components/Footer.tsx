@@ -32,18 +32,116 @@ export default function Footer() {
   return (
     <footer className="bg-[var(--preto)] text-white">
       <Container>
-        <div className="py-16 md:py-20">
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
+        <div className="py-12 md:py-16 lg:py-20">
+          
+          {/* Mobile: Tudo centralizado */}
+          <div className="flex flex-col items-center text-center lg:hidden">
+            {/* Logo */}
+            <Link href="/" className="inline-block mb-6">
+              <Image
+                src="/images/brand/logo-gabriela-birger-white.png"
+                alt="Gabriela Birger"
+                width={240}
+                height={70}
+                className="h-16 w-auto object-contain"
+              />
+            </Link>
             
+            {/* Descrição */}
+            <p className="text-white/60 text-sm leading-relaxed max-w-sm mb-8">
+              Psicanalista e idealizadora do com.verso, um espaço dedicado à reflexão e ao diálogo qualificado.
+            </p>
+            
+            {/* Navegação e Contato lado a lado */}
+            <div className="grid grid-cols-2 gap-8 w-full max-w-sm mb-8">
+              {/* Navegação */}
+              <div>
+                <h4 className="text-xs font-medium tracking-wider uppercase mb-4 text-white/40">
+                  Navegação
+                </h4>
+                <nav className="flex flex-col gap-2">
+                  {navLinks.slice(0, 4).map((link) => (
+                    <Link
+                      key={link.href}
+                      href={link.href}
+                      className="text-white/70 hover:text-white transition-colors text-sm"
+                    >
+                      {link.label}
+                    </Link>
+                  ))}
+                </nav>
+              </div>
+              
+              {/* Contato */}
+              <div>
+                <h4 className="text-xs font-medium tracking-wider uppercase mb-4 text-white/40">
+                  Contato
+                </h4>
+                <div className="flex flex-col gap-2">
+                  <a 
+                    href="https://wa.me/5511982925279"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-white/70 hover:text-white transition-colors text-sm"
+                  >
+                    WhatsApp
+                  </a>
+                  <a 
+                    href="mailto:gabibirger@gmail.com"
+                    className="text-white/70 hover:text-white transition-colors text-sm"
+                  >
+                    Email
+                  </a>
+                  <span className="text-white/70 text-sm">
+                    São Paulo, SP
+                  </span>
+                </div>
+              </div>
+            </div>
+            
+            {/* Redes sociais */}
+            <div className="flex gap-3 mb-8">
+              <a 
+                href="https://wa.me/5511982925279"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-[var(--terracota)] transition-all duration-300"
+                aria-label="WhatsApp"
+              >
+                <WhatsAppIcon className="w-4 h-4" />
+              </a>
+              <a 
+                href="https://www.instagram.com/_com.verso_"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-[var(--terracota)] transition-all duration-300"
+                aria-label="Instagram"
+              >
+                <Instagram className="w-4 h-4" />
+              </a>
+              <a 
+                href="https://open.spotify.com/show/3NZGaOQD79tO12wuOhLZf9"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-[var(--terracota)] transition-all duration-300"
+                aria-label="Spotify"
+              >
+                <SpotifyIcon className="w-4 h-4" />
+              </a>
+            </div>
+          </div>
+
+          {/* Desktop: Layout em colunas */}
+          <div className="hidden lg:grid lg:grid-cols-4 gap-8">
             {/* Coluna 1 - Logo e descrição */}
             <div className="lg:col-span-2">
               <Link href="/" className="inline-block mb-6">
                 <Image
                   src="/images/brand/logo-gabriela-birger-white.png"
                   alt="Gabriela Birger"
-                  width={320}
-                  height={100}
-                  className="h-28 md:h-32 w-auto object-contain"
+                  width={280}
+                  height={80}
+                  className="h-20 w-auto object-contain"
                 />
               </Link>
               <p className="text-white/60 text-sm leading-relaxed max-w-sm">
@@ -130,9 +228,9 @@ export default function Footer() {
           </div>
         </div>
         
-        {/* Barra inferior - APENAS direitos reservados */}
+        {/* Barra inferior */}
         <div className="border-t border-white/10 py-6">
-          <p className="text-center text-white/40 text-sm">
+          <p className="text-center text-white/40 text-xs">
             © {currentYear} Gabriela Birger. Todos os direitos reservados.
           </p>
         </div>

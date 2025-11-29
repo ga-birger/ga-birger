@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
-import { Menu, X, Instagram, ChevronRight } from 'lucide-react'
+import { Menu, X, Instagram } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
 
 const WhatsAppIcon = ({ className }: { className?: string }) => (
@@ -55,38 +55,49 @@ export default function Header() {
 
   return (
     <>
-      {/* FITA DE EVENTO */}
+      {/* FITA DE EVENTO - MARQUEE */}
       <AnimatePresence>
         {showBanner && (
-          <motion.div
-            initial={{ height: 0, opacity: 0 }}
-            animate={{ height: 'auto', opacity: 1 }}
-            exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.3 }}
-            className="bg-[var(--preto)] text-white overflow-hidden"
-          >
-            <div className="flex items-center justify-center gap-2 px-4 py-2.5 text-sm">
-              <span className="text-white/80">{EVENT_CONFIG.text}</span>
-              <a 
-                href={EVENT_CONFIG.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-1 text-[var(--mostarda)] hover:text-white transition-colors font-medium"
+          <div className="bg-[var(--preto)] text-white overflow-hidden relative">
+            {/* Botão fechar */}
+            <button
+              onClick={() => setShowBanner(false)}
+              className="absolute right-2 top-1/2 -translate-y-1/2 z-10 p-1 text-white/50 hover:text-white transition-colors"
+              aria-label="Fechar"
+            >
+              <X className="w-3 h-3" />
+            </button>
+            
+            {/* Texto animado */}
+            <div className="py-2 pr-8">
+              <motion.div
+                animate={{ x: ['0%', '-50%'] }}
+                transition={{ 
+                  duration: 15, 
+                  repeat: Infinity, 
+                  ease: 'linear' 
+                }}
+                className="flex whitespace-nowrap"
               >
-                {EVENT_CONFIG.linkText}
-                <ChevronRight className="w-4 h-4" />
-              </a>
-              
-              {/* Botão fechar */}
-              <button
-                onClick={() => setShowBanner(false)}
-                className="absolute right-4 p-1 text-white/50 hover:text-white transition-colors"
-                aria-label="Fechar"
-              >
-                <X className="w-4 h-4" />
-              </button>
+                {[...Array(2)].map((_, i) => (
+                  <span key={i} className="flex items-center gap-8 text-sm mr-8">
+                    <span className="flex items-center gap-2">
+                      <span className="w-1.5 h-1.5 bg-[var(--mostarda)] rounded-full" />
+                      <span>{EVENT_CONFIG.text}</span>
+                      <a 
+                        href={EVENT_CONFIG.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-[var(--mostarda)] hover:text-white transition-colors font-medium"
+                      >
+                        {EVENT_CONFIG.linkText} →
+                      </a>
+                    </span>
+                  </span>
+                ))}
+              </motion.div>
             </div>
-          </motion.div>
+          </div>
         )}
       </AnimatePresence>
 
@@ -127,22 +138,45 @@ export default function Header() {
           </nav>
         </div>
 
-        {/* Mobile Header */}
-        <div className="lg:hidden flex items-center justify-between px-6 py-4">
-          <Link href="/" className="font-serif text-lg">
-            GB
-          </Link>
+        {/* Mobile Header - Centralizado */}
+        <div className="lg:hidden flex flex-col items-center py-4 gap-3">
+          {/* Ícones sociais no topo */}
+          <div className="flex items-center gap-1">
+            {socialLinks.map((social) => (
+              <a
+                key={social.label}
+                href={social.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-8 h-8 rounded-full flex items-center justify-center text-[var(--preto)]/40 hover:text-[var(--terracota)] transition-all duration-300"
+                aria-label={social.label}
+              >
+                <social.icon className="w-4 h-4" />
+              </a>
+            ))}
+          </div>
           
+          {/* Menu hamburguer centralizado */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="w-10 h-10 flex items-center justify-center"
+            className="flex items-center gap-2 text-sm tracking-wide text-[var(--preto)]/70"
             aria-label="Menu"
           >
-            {isOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+            {isOpen ? (
+              <>
+                <X className="w-4 h-4" />
+                <span>Fechar</span>
+              </>
+            ) : (
+              <>
+                <Menu className="w-4 h-4" />
+                <span>Menu</span>
+              </>
+            )}
           </button>
         </div>
 
-        {/* Mobile Menu */}
+        {/* Mobile Menu - Fullscreen centralizado */}
         <AnimatePresence>
           {isOpen && (
             <motion.div
@@ -152,8 +186,8 @@ export default function Header() {
               transition={{ duration: 0.3 }}
               className="lg:hidden bg-[var(--creme)] border-t border-[var(--preto)]/5 overflow-hidden"
             >
-              <div className="px-6 py-6">
-                <nav className="flex flex-col gap-1 mb-6">
+              <div className="py-8">
+                <nav className="flex flex-col items-center gap-1">
                   {navLinks.map((link) => (
                     <Link
                       key={link.href}
@@ -165,20 +199,6 @@ export default function Header() {
                     </Link>
                   ))}
                 </nav>
-                
-                <div className="flex gap-3 pt-4 border-t border-[var(--preto)]/10">
-                  {socialLinks.map((social) => (
-                    <a 
-                      key={social.label}
-                      href={social.href} 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="w-10 h-10 rounded-full bg-[var(--preto)]/5 flex items-center justify-center hover:bg-[var(--terracota)] hover:text-white transition-all"
-                    >
-                      <social.icon className="w-4 h-4" />
-                    </a>
-                  ))}
-                </div>
               </div>
             </motion.div>
           )}

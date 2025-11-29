@@ -6,7 +6,7 @@ import { Container } from '@/components/ui/Container';
 
 export function SpotifySection() {
   return (
-    <section className="py-20 md:py-28 lg:py-32 bg-gradient-to-b from-[#5C6652] to-[#4A5243]">
+    <section className="py-12 md:py-20 lg:py-28 bg-gradient-to-b from-[#5C6652] to-[#4A5243]">
       <Container>
         <motion.div
           initial={{ opacity: 0, y: 30 }}

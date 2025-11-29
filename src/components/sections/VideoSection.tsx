@@ -23,7 +23,7 @@ const videos = [
 
 export function VideoSection() {
   return (
-    <section className="py-20 md:py-28 lg:py-32 bg-white">
+    <section className="py-12 md:py-20 lg:py-28 bg-white">
       <Container>
         <motion.div
           initial={{ opacity: 0, y: 30 }}

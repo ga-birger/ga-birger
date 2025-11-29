@@ -45,7 +45,7 @@ const artworks = [
 
 export default function ArtGallery() {
   return (
-    <section className="py-20 md:py-28 lg:py-32 bg-[var(--creme)] overflow-hidden">
+    <section className="py-12 md:py-20 lg:py-28 bg-[var(--creme)] overflow-hidden">
       <Container>
         <motion.div
           initial={{ opacity: 0, y: 30 }}

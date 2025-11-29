@@ -7,7 +7,7 @@ import { Container } from '@/components/ui/Container';
 
 export default function ComversoPreview() {
   return (
-    <section className="py-20 md:py-28 lg:py-32 bg-[#1A1A1A] relative overflow-hidden">
+    <section className="py-12 md:py-20 lg:py-28 bg-[#1A1A1A] relative overflow-hidden">
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[300px] md:text-[400px] font-serif text-white/5 pointer-events-none select-none">
         *
       </div>

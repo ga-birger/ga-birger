@@ -191,3 +191,41 @@ h1, h2, h3, h4, h5, h6 {
 .image-zoom:hover img {
   transform: scale(1.05);
 }
+
+/* Espaçamentos responsivos para seções */
+.section-padding {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+@media (min-width: 768px) {
+  .section-padding {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .section-padding {
+    padding-top: 7rem;
+    padding-bottom: 7rem;
+  }
+}
+
+/* Títulos responsivos */
+.section-title {
+  font-size: 1.75rem;
+  line-height: 1.2;
+}
+
+@media (min-width: 768px) {
+  .section-title {
+    font-size: 2.25rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .section-title {
+    font-size: 3rem;
+  }
+}

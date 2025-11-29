@@ -7,7 +7,7 @@ import Link from 'next/link';
 
 export default function Hero() {
   return (
-    <section className="relative min-h-[90vh] flex items-center bg-[var(--creme)]">
+    <section className="relative min-h-[80vh] flex items-center pt-4 md:pt-0 bg-[var(--creme)]">
       <Container>
         <div className="flex flex-col items-center text-center">
           {/* Imagem dos rabiscos - um pouco menor */}
@@ -15,7 +15,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
-            className="relative w-full max-w-3xl mb-10"
+            className="relative w-full max-w-3xl mb-6 md:mb-10"
           >
             <motion.div
               animate={{

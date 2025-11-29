@@ -8,7 +8,7 @@ import { Container } from '@/components/ui/Container';
 
 export default function About() {
   return (
-    <section className="py-20 md:py-28 lg:py-32 bg-white">
+    <section className="py-12 md:py-20 lg:py-28 bg-white">
       <Container>
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           <motion.div
@@ -45,7 +45,7 @@ export default function About() {
             transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1], delay: 0.2 }}
             className="order-first lg:order-last"
           >
-            <div className="relative w-full max-w-sm mx-auto lg:mx-0">
+            <div className="relative w-full max-w-[280px] md:max-w-sm mx-auto lg:mx-0">
               <div className="aspect-[3/4] relative rounded-2xl overflow-hidden shadow-xl">
                 <Image
                   src="/images/gabriela-birger.jpg"
