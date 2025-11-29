@@ -10,6 +10,8 @@ const artworks = [
     title: 'Morning Sun',
     artist: 'Edward Hopper',
     year: '1952',
+    description:
+      'Uma mulher sentada na cama olha pela janela em direção à luz do sol. A obra explora temas de solidão e introspecção.',
     image: '/images/art/morning-sun-hopper.jpg',
   },
   {
@@ -17,6 +19,8 @@ const artworks = [
     title: 'Self-portrait with Hands',
     artist: 'Egon Schiele',
     year: '1910',
+    description:
+      'Autorretrato expressionista que revela a intensidade emocional e a vulnerabilidade do artista.',
     image: '/images/art/self-portrait-schiele.jpg',
   },
   {
@@ -24,92 +28,84 @@ const artworks = [
     title: 'Girl on a Divan',
     artist: 'Ernst Ludwig Kirchner',
     year: '1909',
+    description:
+      'Obra do movimento Die Brücke que captura a tensão entre o corpo e o espaço interior.',
     image: '/images/art/girl-on-divan-kirchner.jpg',
+  },
+  {
+    id: 4,
+    title: 'The Mystery of the Ordinary',
+    artist: 'René Magritte',
+    year: '1926-1938',
+    description:
+      'O surrealismo de Magritte questiona a realidade e convida à reflexão sobre o que vemos e o que está oculto.',
+    image: '/images/art/magritte-the-mystery.jpg',
   },
 ];
 
 export default function ArtGallery() {
   return (
-    <section className="py-20 md:py-28 bg-[#F5EDE8]">
+    <section className="py-20 md:py-28 lg:py-32 bg-[var(--creme)] overflow-hidden">
       <Container>
         <motion.div
-          initial={{ opacity: 0, y: 40 }}
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-100px' }}
-          transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-          className="text-center mb-16"
+          viewport={{ once: true }}
+          className="text-center mb-12"
         >
-          <div className="flex items-center justify-center gap-6 mb-4">
-            <div className="w-16 h-[1px] bg-[#1A1A1A]/20" />
-            <h2 className="font-serif text-4xl md:text-5xl font-light text-[#1A1A1A]">
-              Inspirações
-            </h2>
-            <div className="w-16 h-[1px] bg-[#1A1A1A]/20" />
-          </div>
+          <p className="text-sm tracking-[0.25em] uppercase text-[var(--terracota)] mb-3">
+            Referências
+          </p>
+          <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl mb-6">Inspirações</h2>
         </motion.div>
+      </Container>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: '-100px' }}
-            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-            className="md:row-span-2"
-          >
-            <div className="relative aspect-[4/5] w-full overflow-hidden rounded-sm group">
-              <Image
-                src={artworks[0].image}
-                alt={`${artworks[0].title} - ${artworks[0].artist}`}
-                fill
-                className="object-cover transition-transform duration-700 group-hover:scale-105"
-                sizes="(max-width: 768px) 100vw, 50vw"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-              <div className="absolute bottom-0 left-0 right-0 p-6 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
-                <p className="text-white font-serif text-lg md:text-xl mb-1">
-                  {artworks[0].title}
-                </p>
-                <p className="text-white/80 text-sm">
-                  {artworks[0].artist}, {artworks[0].year}
-                </p>
-              </div>
-            </div>
-          </motion.div>
-
-          {artworks.slice(1).map((artwork, index) => (
-            <motion.div
-              key={artwork.id}
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: '-100px' }}
-              transition={{
-                duration: 0.8,
-                ease: [0.22, 1, 0.36, 1],
-                delay: 0.2 + index * 0.1,
-              }}
+      {/* Carrossel infinito */}
+      <div className="relative">
+        <motion.div
+          className="flex gap-6 px-6"
+          animate={{ x: ['0%', '-50%'] }}
+          transition={{
+            x: {
+              duration: 30,
+              repeat: Infinity,
+              ease: 'linear',
+            },
+          }}
+        >
+          {/* Duplicar para loop infinito */}
+          {[...artworks, ...artworks].map((artwork, index) => (
+            <div
+              key={`${artwork.id}-${index}`}
+              className="flex-shrink-0 w-80 md:w-96 group"
             >
-              <div className="relative aspect-[4/5] w-full overflow-hidden rounded-sm group">
+              <div className="relative aspect-[4/5] rounded-xl overflow-hidden mb-4 shadow-sm hover:shadow-md transition-shadow duration-300">
                 <Image
                   src={artwork.image}
                   alt={`${artwork.title} - ${artwork.artist}`}
                   fill
                   className="object-cover transition-transform duration-700 group-hover:scale-105"
-                  sizes="(max-width: 768px) 100vw, 33vw"
+                  sizes="400px"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                <div className="absolute bottom-0 left-0 right-0 p-6 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
-                  <p className="text-white font-serif text-lg mb-1">
-                    {artwork.title}
-                  </p>
-                  <p className="text-white/80 text-sm">
-                    {artwork.artist}, {artwork.year}
-                  </p>
-                </div>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
               </div>
-            </motion.div>
+              <div className="px-2">
+                <h3 className="font-serif text-lg">{artwork.title}</h3>
+                <p className="text-sm text-[var(--terracota)]">
+                  {artwork.artist}, {artwork.year}
+                </p>
+                <p className="text-sm text-gray-600 mt-2 line-clamp-2">
+                  {artwork.description}
+                </p>
+              </div>
+            </div>
           ))}
-        </div>
-      </Container>
+        </motion.div>
+
+        {/* Fade nas bordas */}
+        <div className="absolute inset-y-0 left-0 w-20 bg-gradient-to-r from-[var(--creme)] to-transparent pointer-events-none" />
+        <div className="absolute inset-y-0 right-0 w-20 bg-gradient-to-l from-[var(--creme)] to-transparent pointer-events-none" />
+      </div>
     </section>
   );
 }

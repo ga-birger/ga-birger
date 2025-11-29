@@ -139,6 +139,33 @@ export default function Podcast() {
           </motion.div>
         </Container>
       </section>
+
+      {/* Outras Participações */}
+      <section className="py-20 md:py-28 bg-[#F5EDE8]">
+        <Container>
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: '-100px' }}
+            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+            className="max-w-2xl mx-auto"
+          >
+            <h2 className="font-serif text-3xl md:text-4xl font-light text-[#1A1A1A] mb-8 text-center">
+              Outras participações
+            </h2>
+            <iframe
+              style={{ borderRadius: '12px' }}
+              src="https://open.spotify.com/embed/episode/2Kw8m6wBaI3isK9TDvRWOR?utm_source=generator&theme=0"
+              width="100%"
+              height="152"
+              frameBorder="0"
+              allowFullScreen
+              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+              loading="lazy"
+            />
+          </motion.div>
+        </Container>
+      </section>
     </>
   );
 }

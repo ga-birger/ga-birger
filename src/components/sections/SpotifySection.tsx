@@ -6,7 +6,7 @@ import { Container } from '@/components/ui/Container';
 
 export function SpotifySection() {
   return (
-    <section className="py-20 md:py-28 bg-gradient-to-b from-[#5C6652] to-[#4A5243]">
+    <section className="py-20 md:py-28 lg:py-32 bg-gradient-to-b from-[#5C6652] to-[#4A5243]">
       <Container>
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -16,13 +16,13 @@ export function SpotifySection() {
           className="max-w-4xl mx-auto"
         >
           <div className="text-center mb-12">
-            <p className="text-[var(--terracota)] text-sm tracking-[0.2em] uppercase mb-4">
+            <p className="text-sm tracking-[0.25em] uppercase text-[var(--terracota)] mb-3">
               Podcast
             </p>
-            <h2 className="text-[var(--creme)] font-serif text-3xl md:text-5xl mb-4">
+            <h2 className="text-[var(--creme)] font-serif text-3xl md:text-4xl lg:text-5xl mb-6">
               com.verso
             </h2>
-            <p className="text-[var(--creme)]/80 max-w-xl mx-auto">
+            <p className="text-base md:text-lg text-[var(--creme)]/70 leading-relaxed max-w-xl mx-auto">
               É podcast de psicanálise. Mas não é análise! Ouça onde preferir.
             </p>
           </div>

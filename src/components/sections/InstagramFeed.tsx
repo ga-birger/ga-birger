@@ -8,7 +8,7 @@ import { Container } from '@/components/ui/Container';
 
 export default function InstagramFeed() {
   return (
-    <section className="py-20 md:py-28 bg-white">
+    <section className="py-20 md:py-28 lg:py-32 bg-[var(--creme)]">
       <Container>
         <motion.div
           initial={{ opacity: 0, y: 40 }}
@@ -17,13 +17,16 @@ export default function InstagramFeed() {
           transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
           className="text-center mb-12"
         >
-          <h2 className="font-serif text-4xl md:text-5xl font-light text-[#1A1A1A] mb-3">
+          <p className="text-sm tracking-[0.25em] uppercase text-[var(--terracota)] mb-3">
+            Redes Sociais
+          </p>
+          <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl mb-6">
             Acompanhe no Instagram
           </h2>
-          <p className="font-sans text-base text-[#1A1A1A]/50 italic">@_com.verso_</p>
+          <p className="text-base text-[var(--preto)]/60 italic">@_com.verso_</p>
         </motion.div>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-10">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4 mb-10">
           {instagramPosts.map((post, index) => (
             <motion.a
               key={post.id}
@@ -34,13 +37,13 @@ export default function InstagramFeed() {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1], delay: index * 0.1 }}
-              className="relative aspect-square overflow-hidden rounded-sm group"
+              className="relative aspect-square overflow-hidden rounded-xl group"
             >
               <Image
                 src={post.image}
                 alt={post.alt}
                 fill
-                className="object-cover transition-transform duration-500 group-hover:scale-110"
+                className="object-cover transition-all duration-500 group-hover:scale-[1.02]"
                 sizes="(max-width: 768px) 50vw, 33vw"
               />
               <div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-colors duration-300 flex items-center justify-center">
