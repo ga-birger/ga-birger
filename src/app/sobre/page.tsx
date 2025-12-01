@@ -5,7 +5,9 @@ import BioSection from '@/components/sections/BioSection';
 import FormacaoList from '@/components/sections/FormacaoList';
 import SectionWrapper from '@/components/ui/SectionWrapper';
 import Button from '@/components/Button';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, MapPin } from 'lucide-react';
+import { Container } from '@/components/ui/Container';
+import Image from 'next/image';
 
 export default function Sobre() {
   return (
@@ -39,32 +41,54 @@ export default function Sobre() {
       </SectionWrapper>
 
       {/* Seção 4: Consultório */}
-      <SectionWrapper background="transparent">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-100px' }}
-          transition={{ duration: 0.6 }}
-          className="max-w-3xl mx-auto text-center"
-          style={{ backgroundColor: 'var(--rosa-claro)' }}
-        >
-          <div className="p-12 md:p-16 rounded-lg">
-            <h2 className="font-serif text-4xl md:text-5xl font-semibold text-preto mb-6">
+      <section className="py-12 md:py-20 bg-creme">
+        <Container>
+          <div className="max-w-4xl mx-auto">
+            <h2 className="font-serif text-2xl md:text-3xl text-center mb-4">
               Consultório
             </h2>
-            <p className="font-sans text-lg md:text-xl text-preto/80 leading-relaxed mb-4">
-              Atendimento presencial em São Paulo e online para todo o Brasil.
-            </p>
-            <p className="font-sans text-base md:text-lg text-preto/60 mb-8">
-              Para agendar uma conversa inicial, entre em contato.
-            </p>
-            <Button href="/contato" variant="primary" size="lg">
-              Entrar em contato
-              <ArrowRight size={24} />
-            </Button>
+            <div className="flex flex-col items-center gap-1 text-preto/60 mb-10">
+              <div className="flex items-center gap-2">
+                <MapPin className="w-4 h-4" />
+                <p className="text-sm">
+                  Rua Dr. Guilherme Bannitz, 126 - CJ 82 - Vila Nova Conceição
+                </p>
+              </div>
+              <p className="text-sm">São Paulo - SP, 04532-010</p>
+            </div>
+            
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4">
+              {[1, 2, 3, 4, 5, 6].map((num) => (
+                <div 
+                  key={num} 
+                  className="relative aspect-[3/4] rounded-lg overflow-hidden"
+                >
+                  <Image
+                    src={`/images/consultorio/consultorio-${num}.jpg`}
+                    alt={`Consultório - Imagem ${num}`}
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+              ))}
+            </div>
+            
+            <div className="text-center mt-10">
+              <p className="text-preto/60 mb-4">
+                Atendimento presencial e online
+              </p>
+              <a
+                href="https://wa.me/5511982925279"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-preto text-white text-sm tracking-wider rounded-lg hover:bg-terracota transition-all duration-300"
+              >
+                Agendar consulta
+              </a>
+            </div>
           </div>
-        </motion.div>
-      </SectionWrapper>
+        </Container>
+      </section>
     </div>
   );
 }

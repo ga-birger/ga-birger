@@ -36,7 +36,7 @@ const socialLinks = [
 // Altere estes valores para mostrar/esconder a fita e mudar o conteúdo
 const EVENT_CONFIG = {
   show: true, // true para mostrar, false para esconder
-  text: 'Próximo com.verso: 12/Dez',
+  text: 'Confira o próximo evento',
   link: 'https://www.instagram.com/_com.verso_',
   linkText: 'Saiba mais',
 }
