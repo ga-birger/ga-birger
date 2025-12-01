@@ -1,10 +1,11 @@
 import { Metadata } from 'next'
 import { Container } from '@/components/ui/Container'
-import { Mail, MapPin, Instagram, Clock } from 'lucide-react'
+import { ContactForm } from '@/components/sections/ContactForm'
+import { Mail, MapPin, Instagram } from 'lucide-react'
 
 export const metadata: Metadata = {
   title: 'Contato',
-  description: 'Entre em contato com Gabriela Birger. Atendimento clínico em São Paulo e online. WhatsApp, email e localização do consultório.',
+  description: 'Entre em contato com Gabriela Birger. Atendimento clínico, com.verso, podcast e imprensa.',
 }
 
 const WhatsAppIcon = ({ className }: { className?: string }) => (
@@ -17,142 +18,127 @@ export default function ContatoPage() {
   return (
     <>
       {/* Hero */}
-      <section className="pt-8 md:pt-12 pb-8 md:pb-12 bg-[var(--creme)]">
+      <section className="pt-8 md:pt-12 pb-8 bg-[var(--creme)]">
         <Container>
-          <div className="max-w-3xl mx-auto text-center">
-            <p className="text-sm tracking-[0.25em] uppercase text-[var(--terracota)] mb-4">
+          <div className="max-w-2xl mx-auto text-center">
+            <p className="text-sm tracking-[0.25em] uppercase text-[var(--terracota)] mb-3">
               Contato
             </p>
-            <h1 className="font-serif text-3xl md:text-4xl lg:text-5xl mb-4">
+            <h1 className="font-serif text-3xl md:text-4xl mb-4">
               Vamos conversar?
             </h1>
             <p className="text-[var(--preto)]/60">
-              Estou disponível para atendimento clínico, dúvidas sobre o com.verso, participações em podcasts, entrevistas e parcerias.
+              Estou disponível para atendimento clínico, dúvidas sobre o com.verso, participações e parcerias.
             </p>
           </div>
         </Container>
       </section>
       
-      {/* Formas de contato */}
-      <section className="py-12 md:py-16 bg-[var(--creme-escuro)]">
+      {/* Conteúdo principal */}
+      <section className="py-12 md:py-16 bg-[var(--creme)]">
         <Container>
-          <div className="max-w-4xl mx-auto">
-            <div className="grid md:grid-cols-3 gap-4 mb-12">
-              {/* WhatsApp */}
-              <a
-                href="https://wa.me/5511982925279"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex flex-col items-center gap-3 p-6 bg-white rounded-lg hover:shadow-md transition-all group text-center"
-              >
-                <div className="w-14 h-14 rounded-full bg-green-500/10 flex items-center justify-center text-green-600 group-hover:bg-green-500 group-hover:text-white transition-all">
-                  <WhatsAppIcon className="w-6 h-6" />
+          <div className="grid lg:grid-cols-5 gap-12 lg:gap-16">
+            
+            {/* Formulário - lado esquerdo */}
+            <div className="lg:col-span-3">
+              <div className="bg-[var(--creme-escuro)]/50 p-6 md:p-8 rounded-lg">
+                <h2 className="font-serif text-xl mb-6">Envie uma mensagem</h2>
+                <ContactForm />
+              </div>
+            </div>
+
+            {/* Informações de contato - lado direito */}
+            <div className="lg:col-span-2">
+              <div className="sticky top-32 space-y-6">
+                
+                <h2 className="font-serif text-xl mb-4">Outras formas de contato</h2>
+                
+                {/* WhatsApp */}
+                <a 
+                  href="https://wa.me/5511982925279"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-4 p-4 bg-white rounded-lg hover:shadow-md transition-all group"
+                >
+                  <div className="w-10 h-10 rounded-full bg-green-500/10 flex items-center justify-center text-green-600 group-hover:bg-green-500 group-hover:text-white transition-all">
+                    <WhatsAppIcon className="w-5 h-5" />
+                  </div>
+                  <div>
+                    <p className="font-medium text-sm">WhatsApp</p>
+                    <p className="text-[var(--preto)]/60 text-sm">+55 11 98292-5279</p>
+                  </div>
+                </a>
+
+                {/* Email */}
+                <a 
+                  href="mailto:gabibirger@gmail.com"
+                  className="flex items-center gap-4 p-4 bg-white rounded-lg hover:shadow-md transition-all group"
+                >
+                  <div className="w-10 h-10 rounded-full bg-[var(--terracota)]/10 flex items-center justify-center text-[var(--terracota)] group-hover:bg-[var(--terracota)] group-hover:text-white transition-all">
+                    <Mail className="w-5 h-5" />
+                  </div>
+                  <div>
+                    <p className="font-medium text-sm">Email</p>
+                    <p className="text-[var(--preto)]/60 text-sm">gabibirger@gmail.com</p>
+                  </div>
+                </a>
+
+                {/* Instagram */}
+                <a 
+                  href="https://www.instagram.com/_com.verso_"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-4 p-4 bg-white rounded-lg hover:shadow-md transition-all group"
+                >
+                  <div className="w-10 h-10 rounded-full bg-pink-500/10 flex items-center justify-center text-pink-600 group-hover:bg-gradient-to-br group-hover:from-purple-500 group-hover:to-pink-500 group-hover:text-white transition-all">
+                    <Instagram className="w-5 h-5" />
+                  </div>
+                  <div>
+                    <p className="font-medium text-sm">Instagram</p>
+                    <p className="text-[var(--preto)]/60 text-sm">@_com.verso_</p>
+                  </div>
+                </a>
+                
+                {/* Consultório */}
+                <div className="p-4 bg-[var(--rosa-claro)]/30 rounded-lg">
+                  <div className="flex items-start gap-4">
+                    <div className="w-10 h-10 rounded-full bg-[var(--terracota)]/10 flex items-center justify-center text-[var(--terracota)] flex-shrink-0">
+                      <MapPin className="w-5 h-5" />
+                    </div>
+                    <div>
+                      <p className="font-medium text-sm mb-1">Consultório</p>
+                      <p className="text-[var(--preto)]/60 text-sm leading-relaxed">
+                        Rua Dr. Guilherme Bannitz, 126<br />
+                        CJ 82 - Vila Nova Conceição<br />
+                        São Paulo - SP, 04532-010
+                      </p>
+                      <p className="text-[var(--preto)]/50 text-xs mt-2">
+                        Atendimento presencial e online
+                      </p>
+                    </div>
+                  </div>
                 </div>
-                <div>
-                  <p className="font-medium">WhatsApp</p>
-                  <p className="text-[var(--preto)]/60 text-sm">+55 11 98292-5279</p>
-                </div>
-              </a>
-              
-              {/* Email */}
-              <a
-                href="mailto:gabibirger@gmail.com"
-                className="flex flex-col items-center gap-3 p-6 bg-white rounded-lg hover:shadow-md transition-all group text-center"
-              >
-                <div className="w-14 h-14 rounded-full bg-[var(--terracota)]/10 flex items-center justify-center text-[var(--terracota)] group-hover:bg-[var(--terracota)] group-hover:text-white transition-all">
-                  <Mail className="w-6 h-6" />
-                </div>
-                <div>
-                  <p className="font-medium">Email</p>
-                  <p className="text-[var(--preto)]/60 text-sm">gabibirger@gmail.com</p>
-                </div>
-              </a>
-              
-              {/* Instagram */}
-              <a
-                href="https://www.instagram.com/_com.verso_"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex flex-col items-center gap-3 p-6 bg-white rounded-lg hover:shadow-md transition-all group text-center"
-              >
-                <div className="w-14 h-14 rounded-full bg-pink-500/10 flex items-center justify-center text-pink-600 group-hover:bg-gradient-to-br group-hover:from-purple-500 group-hover:to-pink-500 group-hover:text-white transition-all">
-                  <Instagram className="w-6 h-6" />
-                </div>
-                <div>
-                  <p className="font-medium">Instagram</p>
-                  <p className="text-[var(--preto)]/60 text-sm">@_com.verso_</p>
-                </div>
-              </a>
+
+              </div>
             </div>
           </div>
         </Container>
       </section>
       
-      {/* Consultório com Mapa */}
-      <section className="py-12 md:py-16 bg-[var(--creme)]">
-        <Container>
-          <div className="max-w-4xl mx-auto">
-            <h2 className="font-serif text-2xl md:text-3xl text-center mb-8">
-              Consultório
-            </h2>
-            
-            <div className="grid md:grid-cols-2 gap-8 items-start">
-              {/* Informações */}
-              <div className="bg-white p-6 rounded-lg">
-                <div className="flex items-start gap-4 mb-6">
-                  <div className="w-10 h-10 rounded-full bg-[var(--terracota)]/10 flex items-center justify-center text-[var(--terracota)] flex-shrink-0">
-                    <MapPin className="w-5 h-5" />
-                  </div>
-                  <div>
-                    <p className="font-medium mb-1">Endereço</p>
-                    <p className="text-[var(--preto)]/60 text-sm leading-relaxed">
-                      Rua Dr. Guilherme Bannitz, 126<br />
-                      Conjunto 82 - Vila Nova Conceição<br />
-                      São Paulo - SP, 04532-010
-                    </p>
-                  </div>
-                </div>
-                
-                <div className="flex items-start gap-4 mb-6">
-                  <div className="w-10 h-10 rounded-full bg-[var(--terracota)]/10 flex items-center justify-center text-[var(--terracota)] flex-shrink-0">
-                    <Clock className="w-5 h-5" />
-                  </div>
-                  <div>
-                    <p className="font-medium mb-1">Atendimento</p>
-                    <p className="text-[var(--preto)]/60 text-sm">
-                      Presencial e Online<br />
-                      Mediante agendamento
-                    </p>
-                  </div>
-                </div>
-                
-                <a
-                  href="https://wa.me/5511982925279"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-6 py-3 bg-[var(--preto)] text-white text-sm tracking-wider rounded-lg hover:bg-[var(--terracota)] transition-all duration-300 w-full justify-center"
-                >
-                  <WhatsAppIcon className="w-4 h-4" />
-                  Agendar consulta
-                </a>
-              </div>
-              
-              {/* Mapa */}
-              <div className="rounded-lg overflow-hidden shadow-md h-[300px] md:h-full min-h-[300px]">
-                <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3656.7424073454384!2d-46.67583492378673!3d-23.58436166349655!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce575f5a5e8c8d%3A0x7dbd730c9c2a1e3c!2sR.%20Dr.%20Guilherme%20Bannitz%2C%20126%20-%20Itaim%20Bibi%2C%20S%C3%A3o%20Paulo%20-%20SP%2C%2004532-060!5e0!3m2!1spt-BR!2sbr!4v1701234567890!5m2!1spt-BR!2sbr"
-                  width="100%"
-                  height="100%"
-                  style={{ border: 0, minHeight: '300px' }}
-                  allowFullScreen
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                  title="Localização do Consultório"
-                />
-              </div>
-            </div>
-          </div>
-        </Container>
+      {/* Mapa */}
+      <section className="bg-[var(--creme-escuro)]">
+        <div className="h-[350px] md:h-[400px]">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3656.7424073454384!2d-46.67583492378673!3d-23.58436166349655!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce575f5a5e8c8d%3A0x7dbd730c9c2a1e3c!2sR.%20Dr.%20Guilherme%20Bannitz%2C%20126%20-%20Itaim%20Bibi%2C%20S%C3%A3o%20Paulo%20-%20SP%2C%2004532-060!5e0!3m2!1spt-BR!2sbr!4v1701234567890!5m2!1spt-BR!2sbr"
+            width="100%"
+            height="100%"
+            style={{ border: 0 }}
+            allowFullScreen
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+            title="Localização do Consultório"
+          />
+        </div>
       </section>
     </>
   )
