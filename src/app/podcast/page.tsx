@@ -3,7 +3,7 @@ import { Container } from '@/components/ui/Container'
 
 export const metadata: Metadata = {
   title: 'Podcast',
-  description: 'Ouça o podcast com.verso - conversas sobre psicanálise, filosofia e cultura contemporânea.',
+  description: 'Ouça o podcast com.verso - conversas sobre psicanálise, filosofia e cultura contemporânea. Disponível no Spotify, Apple Podcasts e Amazon Music.',
 }
 
 const SpotifyIcon = () => (

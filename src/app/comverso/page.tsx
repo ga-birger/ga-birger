@@ -5,7 +5,7 @@ import { Instagram } from 'lucide-react'
 
 export const metadata: Metadata = {
   title: 'com.verso',
-  description: 'O com.verso é um espaço dedicado à reflexão e ao diálogo qualificado sobre temas contemporâneos, cultura e comportamento.',
+  description: 'O com.verso é um espaço de reflexão que integra filosofia, psicanálise e vinho. Encontros mensais em São Paulo.',
 }
 
 export default function ComversoPage() {

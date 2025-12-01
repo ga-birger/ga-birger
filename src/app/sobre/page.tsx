@@ -5,7 +5,7 @@ import { MapPin } from 'lucide-react'
 
 export const metadata: Metadata = {
   title: 'Sobre',
-  description: 'Conheça Gabriela Birger - Psicanalista, filósofa e idealizadora do com.verso.',
+  description: 'Conheça Gabriela Birger - Psicanalista formada pela USP e Sorbonne, idealizadora do com.verso. Atendimento em São Paulo e online.',
 }
 
 export default function SobrePage() {
@@ -39,13 +39,16 @@ export default function SobrePage() {
               </div>
             </div>
             
-            {/* Bio */}
+            {/* Bio completa */}
             <div className="max-w-2xl mx-auto space-y-4 text-center">
               <p className="text-[var(--preto)]/70 leading-relaxed">
-                Psicanalista, formada em Filosofia e em Direito pela USP e pós-graduada em Psicanálise pelo Instituto Sedes Sapientiae. Idealizadora do com.verso, um espaço de reflexão que integra psicanálise, filosofia e vinho.
+                Gabriela Birger é psicanalista, formada em Filosofia e em Direito pela Universidade de São Paulo (USP) e pela Université Paris 1 – Panthéon-Sorbonne.
               </p>
               <p className="text-[var(--preto)]/70 leading-relaxed">
-                Atua em consultório particular em São Paulo, atendendo presencialmente e online. Sua prática clínica é orientada pela escuta singular de cada sujeito e suas questões.
+                Formou-se em psicanálise pelo Centro de Estudos Psicanalíticos, pelo Instituto Sedes Sapientiae e pelo Instituto de Psiquiatria da USP. É Associate Coach certificada pelo NeuroLeadership Institute, em Nova York.
+              </p>
+              <p className="text-[var(--preto)]/70 leading-relaxed">
+                Atende como psicanalista em consultório particular, além de prestar consultoria em saúde mental e liderança para organizações. Além disso, é a idealizadora do com.verso.
               </p>
             </div>
           </div>
@@ -62,7 +65,7 @@ export default function SobrePage() {
             <div className="space-y-4">
               <div className="bg-white p-5 rounded-lg">
                 <p className="font-medium mb-1">Psicanálise</p>
-                <p className="text-[var(--preto)]/60 text-sm">Instituto Sedes Sapientiae</p>
+                <p className="text-[var(--preto)]/60 text-sm">Centro de Estudos Psicanalíticos, Instituto Sedes Sapientiae e Instituto de Psiquiatria da USP</p>
               </div>
               <div className="bg-white p-5 rounded-lg">
                 <p className="font-medium mb-1">Filosofia</p>
@@ -70,7 +73,11 @@ export default function SobrePage() {
               </div>
               <div className="bg-white p-5 rounded-lg">
                 <p className="font-medium mb-1">Direito</p>
-                <p className="text-[var(--preto)]/60 text-sm">Universidade de São Paulo (USP)</p>
+                <p className="text-[var(--preto)]/60 text-sm">Universidade de São Paulo (USP) e Université Paris 1 – Panthéon-Sorbonne</p>
+              </div>
+              <div className="bg-white p-5 rounded-lg">
+                <p className="font-medium mb-1">Associate Coach</p>
+                <p className="text-[var(--preto)]/60 text-sm">NeuroLeadership Institute, Nova York</p>
               </div>
             </div>
           </div>

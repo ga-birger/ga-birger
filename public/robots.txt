@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://gabrielabirger.com.br/sitemap.xml
+

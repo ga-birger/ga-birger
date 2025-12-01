@@ -4,7 +4,7 @@ import { FileText, ExternalLink } from 'lucide-react'
 
 export const metadata: Metadata = {
   title: 'Publicações',
-  description: 'Artigos, monografias e textos de Gabriela Birger sobre psicanálise e temas contemporâneos.',
+  description: 'Artigos e monografias de Gabriela Birger sobre psicanálise, saúde mental e temas contemporâneos.',
 }
 
 const monografias = [

@@ -3,6 +3,7 @@ import { Cormorant_Garamond, DM_Sans } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { StructuredData } from "@/components/StructuredData";
 
 const cormorant = Cormorant_Garamond({
   subsets: ["latin"],
@@ -24,10 +25,13 @@ export const metadata: Metadata = {
     template: '%s | Gabriela Birger'
   },
   description: 'Psicanalista, filósofa e idealizadora do com.verso. Atendimento clínico em São Paulo e online. Reflexões sobre psicanálise, filosofia e cultura contemporânea.',
-  keywords: ['psicanálise', 'com.verso', 'Gabriela Birger', 'psicanalista São Paulo', 'filosofia', 'podcast psicanálise'],
+  keywords: ['psicanálise', 'psicanalista São Paulo', 'Gabriela Birger', 'com.verso', 'filosofia', 'atendimento psicológico', 'saúde mental', 'psicanálise online'],
   authors: [{ name: 'Gabriela Birger' }],
   creator: 'Gabriela Birger',
   metadataBase: new URL('https://gabrielabirger.com.br'),
+  alternates: {
+    canonical: '/',
+  },
   openGraph: {
     type: 'website',
     locale: 'pt_BR',
@@ -56,6 +60,13 @@ export const metadata: Metadata = {
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
   },
 };
 
@@ -70,6 +81,7 @@ export default function RootLayout({
         <Header />
         <main>{children}</main>
         <Footer />
+        <StructuredData />
       </body>
     </html>
   );
