@@ -62,27 +62,29 @@ export function MonografiasSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="max-w-3xl mx-auto"
+          className="max-w-5xl mx-auto"
         >
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div className="grid md:grid-cols-2 gap-4">
             {monografias.map((mono, index) => (
               <a
                 key={index}
                 href={mono.file}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-4 p-5 bg-white/10 rounded-lg hover:bg-white/20 transition-all group"
+                className="flex items-start gap-4 p-5 bg-white/10 rounded-lg hover:bg-white/20 transition-all group"
               >
-                <div className="w-12 h-12 rounded-lg bg-mostarda/20 flex items-center justify-center flex-shrink-0">
-                  <FileText className="w-5 h-5 text-mostarda" />
+                <div className="w-12 h-12 rounded-lg bg-[var(--mostarda)]/20 flex items-center justify-center flex-shrink-0 mt-1">
+                  <FileText className="w-5 h-5 text-[var(--mostarda)]" />
                 </div>
                 <div className="flex-1 min-w-0">
-                  <p className="font-medium text-white group-hover:text-mostarda transition-colors">
+                  <p className="font-medium text-white group-hover:text-[var(--mostarda)] transition-colors mb-1">
                     {mono.title}
                   </p>
-                  <p className="text-white/60 text-sm">{mono.subtitle}</p>
+                  <p className="text-white/50 text-sm leading-relaxed line-clamp-2">
+                    {mono.subtitle}
+                  </p>
                 </div>
-                <Download className="w-4 h-4 text-white/30 group-hover:text-mostarda transition-colors" />
+                <Download className="w-4 h-4 text-white/30 group-hover:text-[var(--mostarda)] transition-colors flex-shrink-0 mt-1" />
               </a>
             ))}
           </div>
@@ -90,7 +92,7 @@ export function MonografiasSection() {
           <div className="text-center mt-8">
             <Link
               href="/publicacoes"
-              className="inline-flex items-center gap-2 text-mostarda text-sm font-medium hover:gap-3 transition-all"
+              className="inline-flex items-center gap-2 text-[var(--mostarda)] text-sm font-medium hover:gap-3 transition-all"
             >
               Ver todas as publicações
               <ArrowRight className="w-4 h-4" />
