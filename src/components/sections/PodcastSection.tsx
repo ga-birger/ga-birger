@@ -3,7 +3,8 @@
 import { motion } from 'framer-motion'
 import { Container } from '../ui/Container'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
-import { useState } from 'react'
+import { useState, useRef } from 'react'
+import Link from 'next/link'
 
 const SpotifyIcon = () => (
   <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
@@ -11,33 +12,30 @@ const SpotifyIcon = () => (
   </svg>
 )
 
-const AmazonIcon = () => (
-  <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
-    <path d="M.045 18.02c.072-.116.187-.124.348-.022 3.636 2.11 7.594 3.166 11.87 3.166 2.852 0 5.668-.533 8.447-1.595l.315-.14c.138-.06.234-.1.293-.13.226-.088.39-.046.525.13.12.174.09.336-.12.48-.256.19-.6.41-1.006.654-1.244.743-2.64 1.316-4.185 1.726-1.544.406-3.045.61-4.502.61-2.602 0-5.124-.477-7.564-1.43-2.44-.95-4.428-2.16-5.966-3.62-.12-.14-.15-.25-.1-.36zm1.1-1.85c-.09-.14-.06-.27.1-.39.18-.13.37-.09.57.13 1.63 1.89 3.59 3.35 5.88 4.38 2.29 1.03 4.67 1.54 7.14 1.54 2.09 0 4.09-.35 6-.95 1.91-.6 3.58-1.49 5.01-2.67.18-.14.33-.16.45-.06.12.1.13.24.03.42-.1.18-.29.37-.57.57-1.54 1.28-3.36 2.26-5.46 2.94-2.1.68-4.24 1.02-6.42 1.02-2.73 0-5.37-.53-7.92-1.59-2.55-1.06-4.7-2.49-6.45-4.29-.12-.12-.15-.23-.09-.35z"/>
-  </svg>
-)
-
-const AppleIcon = () => (
-  <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
-    <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
-  </svg>
-)
-
-// Lista de episódios embed do Spotify (IDs dos episódios)
+// IDs dos episódios do podcast com.verso no Spotify
+// Para pegar o ID: abra o episódio no Spotify > Share > Copy Episode Link > o ID é a parte após /episode/
 const episodios = [
-  '2Kw8m6wBaI3isK9TDvRWOR', // Substitua pelos IDs reais dos episódios
-  // Adicione mais IDs de episódios aqui
+  { 
+    id: '3NZGaOQD79tO12wuOhLZf9', // Este é o ID do SHOW (mostra episódio mais recente)
+    isShow: true 
+  },
+  // Adicione IDs de episódios específicos aqui quando tiver:
+  // { id: 'ID_EPISODIO_1', isShow: false },
+  // { id: 'ID_EPISODIO_2', isShow: false },
 ]
 
 export function PodcastSection() {
-  const [currentEpisode, setCurrentEpisode] = useState(0)
+  const [currentIndex, setCurrentIndex] = useState(0)
+  const scrollRef = useRef<HTMLDivElement>(null)
 
-  const nextEpisode = () => {
-    setCurrentEpisode((prev) => (prev + 1) % episodios.length)
-  }
-
-  const prevEpisode = () => {
-    setCurrentEpisode((prev) => (prev - 1 + episodios.length) % episodios.length)
+  const scrollTo = (direction: 'left' | 'right') => {
+    if (scrollRef.current) {
+      const scrollAmount = 400
+      scrollRef.current.scrollBy({
+        left: direction === 'left' ? -scrollAmount : scrollAmount,
+        behavior: 'smooth'
+      })
+    }
   }
 
   return (
@@ -61,64 +59,73 @@ export function PodcastSection() {
           </p>
         </motion.div>
         
-        {/* Player com navegação */}
+        {/* Player principal com navegação */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="max-w-3xl mx-auto"
+          className="relative max-w-4xl mx-auto"
         >
-          <div className="relative">
-            {/* Setas de navegação */}
-            {episodios.length > 1 && (
-              <>
-                <button
-                  onClick={prevEpisode}
-                  className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-12 md:-translate-x-16 w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-white/20 transition-colors z-10"
-                  aria-label="Episódio anterior"
-                >
-                  <ChevronLeft className="w-5 h-5" />
-                </button>
-                <button
-                  onClick={nextEpisode}
-                  className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-12 md:translate-x-16 w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-white/20 transition-colors z-10"
-                  aria-label="Próximo episódio"
-                >
-                  <ChevronRight className="w-5 h-5" />
-                </button>
-              </>
-            )}
-            
-            {/* Embed do Spotify */}
-            <div className="rounded-lg overflow-hidden shadow-xl">
-              <iframe
-                src={`https://open.spotify.com/embed/episode/${episodios[currentEpisode]}?utm_source=generator&theme=0`}
-                width="100%"
-                height="352"
-                frameBorder="0"
-                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-                loading="lazy"
-                className="w-full"
-              />
+          {/* Setas de navegação */}
+          <button
+            onClick={() => scrollTo('left')}
+            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 md:-translate-x-14 w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-white/20 transition-colors z-10 hidden md:flex"
+            aria-label="Anterior"
+          >
+            <ChevronLeft className="w-5 h-5" />
+          </button>
+          <button
+            onClick={() => scrollTo('right')}
+            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 md:translate-x-14 w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-white/20 transition-colors z-10 hidden md:flex"
+            aria-label="Próximo"
+          >
+            <ChevronRight className="w-5 h-5" />
+          </button>
+
+          {/* Container com scroll horizontal */}
+          <div 
+            ref={scrollRef}
+            className="flex gap-4 overflow-x-auto scrollbar-hide snap-x snap-mandatory pb-4"
+            style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+          >
+            {/* Episódio principal (maior) */}
+            <div className="flex-shrink-0 w-full md:w-[60%] snap-center">
+              <div className="rounded-lg overflow-hidden shadow-xl bg-white/5">
+                <iframe
+                  src="https://open.spotify.com/embed/show/3NZGaOQD79tO12wuOhLZf9?utm_source=generator&theme=0"
+                  width="100%"
+                  height="352"
+                  frameBorder="0"
+                  allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                  loading="lazy"
+                  className="w-full"
+                />
+              </div>
+              <p className="text-center text-white/50 text-sm mt-3">Episódio mais recente</p>
             </div>
             
-            {/* Indicadores */}
-            {episodios.length > 1 && (
-              <div className="flex justify-center gap-2 mt-4">
-                {episodios.map((_, index) => (
-                  <button
-                    key={index}
-                    onClick={() => setCurrentEpisode(index)}
-                    className={`w-2 h-2 rounded-full transition-colors ${
-                      index === currentEpisode ? 'bg-white' : 'bg-white/30'
-                    }`}
-                    aria-label={`Episódio ${index + 1}`}
-                  />
-                ))}
+            {/* Episódios anteriores (menores) - usando lista compacta do show */}
+            <div className="flex-shrink-0 w-full md:w-[38%] snap-center">
+              <div className="rounded-lg overflow-hidden shadow-xl bg-white/5">
+                <iframe
+                  src="https://open.spotify.com/embed/show/3NZGaOQD79tO12wuOhLZf9/list?utm_source=generator&theme=0"
+                  width="100%"
+                  height="352"
+                  frameBorder="0"
+                  allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                  loading="lazy"
+                  className="w-full"
+                />
               </div>
-            )}
+              <p className="text-center text-white/50 text-sm mt-3">Todos os episódios</p>
+            </div>
           </div>
+          
+          {/* Indicador de scroll no mobile */}
+          <p className="text-center text-white/40 text-xs mt-2 md:hidden">
+            ← Deslize para ver mais →
+          </p>
         </motion.div>
         
         {/* Botões das plataformas */}
@@ -144,7 +151,6 @@ export function PodcastSection() {
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#00A8E1] text-white text-sm rounded-lg hover:opacity-90 transition-opacity"
           >
-            <AmazonIcon />
             Amazon Music
           </a>
           <a
@@ -153,12 +159,20 @@ export function PodcastSection() {
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#9933CC] text-white text-sm rounded-lg hover:opacity-90 transition-opacity"
           >
-            <AppleIcon />
             Apple Podcasts
           </a>
         </motion.div>
+        
+        {/* Link para página */}
+        <div className="text-center mt-6">
+          <Link
+            href="/podcast"
+            className="text-white/60 text-sm hover:text-white transition-colors"
+          >
+            Ver mais sobre o podcast →
+          </Link>
+        </div>
       </Container>
     </section>
   )
 }
-

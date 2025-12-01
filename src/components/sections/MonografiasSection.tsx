@@ -30,7 +30,7 @@ const monografias = [
 
 export function MonografiasSection() {
   return (
-    <section className="py-12 md:py-20 lg:py-28 bg-creme">
+    <section className="py-12 md:py-20 lg:py-28 bg-preto">
       <Container>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -39,10 +39,10 @@ export function MonografiasSection() {
           transition={{ duration: 0.6 }}
           className="text-center mb-10"
         >
-          <p className="text-sm tracking-[0.25em] uppercase text-terracota mb-3">
+          <p className="text-sm tracking-[0.25em] uppercase text-mostarda mb-3">
             Publicações
           </p>
-          <h2 className="font-serif text-3xl md:text-4xl">
+          <h2 className="font-serif text-3xl md:text-4xl text-white">
             Monografias
           </h2>
         </motion.div>
@@ -61,18 +61,18 @@ export function MonografiasSection() {
                 href={mono.file}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-4 p-5 bg-white rounded-lg hover:shadow-md transition-all group"
+                className="flex items-center gap-4 p-5 bg-white/10 rounded-lg hover:bg-white/20 transition-all group"
               >
-                <div className="w-12 h-12 rounded-lg bg-rosa-claro flex items-center justify-center flex-shrink-0">
-                  <FileText className="w-5 h-5 text-terracota" />
+                <div className="w-12 h-12 rounded-lg bg-mostarda/20 flex items-center justify-center flex-shrink-0">
+                  <FileText className="w-5 h-5 text-mostarda" />
                 </div>
                 <div className="flex-1 min-w-0">
-                  <p className="font-medium group-hover:text-terracota transition-colors">
+                  <p className="font-medium text-white group-hover:text-mostarda transition-colors">
                     {mono.title}
                   </p>
-                  <p className="text-preto/60 text-sm">{mono.subtitle}</p>
+                  <p className="text-white/60 text-sm">{mono.subtitle}</p>
                 </div>
-                <Download className="w-4 h-4 text-preto/30 group-hover:text-terracota transition-colors" />
+                <Download className="w-4 h-4 text-white/30 group-hover:text-mostarda transition-colors" />
               </a>
             ))}
           </div>
@@ -80,7 +80,7 @@ export function MonografiasSection() {
           <div className="text-center mt-8">
             <Link
               href="/publicacoes"
-              className="inline-flex items-center gap-2 text-terracota text-sm font-medium hover:gap-3 transition-all"
+              className="inline-flex items-center gap-2 text-mostarda text-sm font-medium hover:gap-3 transition-all"
             >
               Ver todas as publicações
               <ArrowRight className="w-4 h-4" />

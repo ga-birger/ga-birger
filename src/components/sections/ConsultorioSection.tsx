@@ -8,10 +8,6 @@ import { MapPin } from 'lucide-react'
 const consultorioImages = [
   '/images/consultorio/consultorio-1.jpg',
   '/images/consultorio/consultorio-2.jpg',
-  '/images/consultorio/consultorio-3.jpg',
-  '/images/consultorio/consultorio-4.jpg',
-  '/images/consultorio/consultorio-5.jpg',
-  '/images/consultorio/consultorio-6.jpg',
 ]
 
 export function ConsultorioSection() {
@@ -47,7 +43,7 @@ export function ConsultorioSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4 max-w-4xl mx-auto"
+          className="grid grid-cols-2 gap-4 md:gap-6 max-w-2xl mx-auto"
         >
           {consultorioImages.map((src, index) => (
             <div 

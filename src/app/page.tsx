@@ -19,7 +19,6 @@ export default function Home() {
       <ScrollProgress />
       <Hero />
       <About />
-      <ConsultorioSection />
       <ArtGallery />
       <VideoSection />
       <ComversoPreview />
@@ -28,6 +27,7 @@ export default function Home() {
       <MonografiasSection />
       <InstagramFeed />
       <CallToAction />
+      <ConsultorioSection />
     </>
   );
 }

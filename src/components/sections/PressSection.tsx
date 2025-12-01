@@ -43,7 +43,7 @@ export function PressSection() {
           </h2>
         </motion.div>
         
-        <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+        <div className="flex flex-col gap-6 max-w-4xl mx-auto">
           {reportagens.map((item, index) => (
             <motion.a
               key={index}
@@ -61,32 +61,33 @@ export function PressSection() {
                 <Image
                   src={item.logo}
                   alt={item.logoAlt}
-                  width={100}
-                  height={30}
-                  className="h-6 md:h-7 w-auto object-contain"
+                  width={120}
+                  height={40}
+                  className="h-7 md:h-8 w-auto object-contain"
                 />
                 <span className="flex items-center gap-1 text-xs text-preto/40 group-hover:text-terracota transition-colors">
-                  Ler
+                  Ler matéria
                   <ArrowUpRight className="w-3 h-3" />
                 </span>
               </div>
               
-              {/* Imagem */}
-              <div className="relative w-full aspect-[16/9] overflow-hidden bg-gray-50">
+              {/* Imagem - formato banner largo */}
+              <div className="relative w-full overflow-hidden bg-gray-50">
                 <Image
                   src={item.image}
                   alt={item.title}
-                  fill
-                  className="object-cover transition-transform duration-700 group-hover:scale-105"
+                  width={1096}
+                  height={205}
+                  className="w-full h-auto object-contain transition-transform duration-700 group-hover:scale-[1.02]"
                 />
               </div>
               
               {/* Texto */}
-              <div className="p-5">
-                <h3 className="font-serif text-lg md:text-xl mb-2 group-hover:text-terracota transition-colors leading-tight">
+              <div className="p-5 md:p-6">
+                <h3 className="font-serif text-lg md:text-xl lg:text-2xl mb-2 group-hover:text-terracota transition-colors leading-tight">
                   {item.title}
                 </h3>
-                <p className="text-preto/60 text-sm line-clamp-2">
+                <p className="text-preto/60 text-sm md:text-base">
                   {item.description}
                 </p>
               </div>
