@@ -7,24 +7,34 @@ import { FileText, ArrowRight, Download } from 'lucide-react'
 
 const monografias = [
   {
-    title: 'Monografia Ciclo II',
-    subtitle: 'Instituto Sedes Sapientiae',
-    file: '/docs/monografia-ciclo-ii.pdf',
+    title: 'Monografia I',
+    subtitle: 'A importância do sintoma para o tratamento psicanalítico como elemento constituinte da personalidade do sujeito',
+    file: '/docs/monografia-1.pdf',
   },
   {
-    title: 'Monografia Ciclo III',
-    subtitle: 'Instituto Sedes Sapientiae',
-    file: '/docs/monografia-ciclo-iii.pdf',
+    title: 'Monografia II',
+    subtitle: 'A queda da racionalidade com a descoberta do inconsciente',
+    file: '/docs/monografia-2.pdf',
   },
   {
-    title: 'Monografia Ciclo IV',
-    subtitle: 'Instituto Sedes Sapientiae',
-    file: '/docs/monografia-ciclo-iv.pdf',
+    title: 'Monografia III',
+    subtitle: 'O eu entendido como colcha de retalhos de precipitados identificatórios',
+    file: '/docs/monografia-3.pdf',
   },
   {
-    title: 'Monografia Ciclo V',
-    subtitle: 'Instituto Sedes Sapientiae',
-    file: '/docs/monografia-ciclo-v.pdf',
+    title: 'Monografia IV',
+    subtitle: 'Projeto e projeções: a dificuldade integrativa frente à ambivalência pulsional',
+    file: '/docs/monografia-4.pdf',
+  },
+  {
+    title: 'Monografia V',
+    subtitle: 'Onde a mente emudece, o corpo soçobra – a importância da elaboração psíquica',
+    file: '/docs/monografia-5.pdf',
+  },
+  {
+    title: 'Monografia VI',
+    subtitle: 'O analista é aquele que (sobre)vive',
+    file: '/docs/monografia-6.pdf',
   },
 ]
 
@@ -54,7 +64,7 @@ export function MonografiasSection() {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="max-w-3xl mx-auto"
         >
-          <div className="grid sm:grid-cols-2 gap-4">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {monografias.map((mono, index) => (
               <a
                 key={index}

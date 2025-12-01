@@ -57,8 +57,8 @@ export default function Sobre() {
               <p className="text-sm">São Paulo - SP, 04532-010</p>
             </div>
             
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4">
-              {[1, 2, 3, 4, 5, 6].map((num) => (
+            <div className="grid grid-cols-2 gap-4 md:gap-6 max-w-2xl mx-auto">
+              {[1, 2].map((num) => (
                 <div 
                   key={num} 
                   className="relative aspect-[3/4] rounded-lg overflow-hidden"

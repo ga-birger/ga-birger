@@ -93,7 +93,7 @@ export function PodcastSection() {
             <div className="flex-shrink-0 w-full md:w-[60%] snap-center">
               <div className="rounded-lg overflow-hidden shadow-xl bg-white/5">
                 <iframe
-                  src="https://open.spotify.com/embed/show/3NZGaOQD79tO12wuOhLZf9?utm_source=generator&theme=0"
+                  src="https://open.spotify.com/embed/episode/5uFuV3dK8DPZaYJF08F47Y?utm_source=generator&theme=0"
                   width="100%"
                   height="352"
                   frameBorder="0"
@@ -102,14 +102,13 @@ export function PodcastSection() {
                   className="w-full"
                 />
               </div>
-              <p className="text-center text-white/50 text-sm mt-3">Episódio mais recente</p>
             </div>
             
-            {/* Episódios anteriores (menores) - usando lista compacta do show */}
+            {/* Episódio secundário */}
             <div className="flex-shrink-0 w-full md:w-[38%] snap-center">
               <div className="rounded-lg overflow-hidden shadow-xl bg-white/5">
                 <iframe
-                  src="https://open.spotify.com/embed/show/3NZGaOQD79tO12wuOhLZf9/list?utm_source=generator&theme=0"
+                  src="https://open.spotify.com/embed/episode/0Hul30JiwaiqT4Ci1sLfz0?utm_source=generator&theme=0"
                   width="100%"
                   height="352"
                   frameBorder="0"
@@ -118,7 +117,6 @@ export function PodcastSection() {
                   className="w-full"
                 />
               </div>
-              <p className="text-center text-white/50 text-sm mt-3">Todos os episódios</p>
             </div>
           </div>
           
@@ -146,7 +144,7 @@ export function PodcastSection() {
             Spotify
           </a>
           <a
-            href="LINK_AMAZON_MUSIC"
+            href="https://music.amazon.com.br/podcasts/753d7100-fcf0-4017-85f8-103067fdabf8/com-verso"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#00A8E1] text-white text-sm rounded-lg hover:opacity-90 transition-opacity"
@@ -154,7 +152,7 @@ export function PodcastSection() {
             Amazon Music
           </a>
           <a
-            href="LINK_APPLE_PODCASTS"
+            href="https://podcasts.apple.com/us/podcast/com-verso/id1841503656"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#9933CC] text-white text-sm rounded-lg hover:opacity-90 transition-opacity"

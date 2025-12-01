@@ -190,7 +190,9 @@ export default function Footer() {
                   <span>gabibirger@gmail.com</span>
                 </a>
                 <p className="text-white/70 text-sm">
-                  São Paulo, SP
+                  Rua Dr. Guilherme Bannitz, 126<br />
+                  CJ 82 - Vila Nova Conceição<br />
+                  São Paulo - SP, 04532-010
                 </p>
               </div>
               
