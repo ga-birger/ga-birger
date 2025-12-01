@@ -1,53 +1,90 @@
-'use client';
+import { Metadata } from 'next'
+import { Container } from '@/components/ui/Container'
+import Image from 'next/image'
+import { MapPin } from 'lucide-react'
 
-import { motion } from 'framer-motion';
-import BioSection from '@/components/sections/BioSection';
-import FormacaoList from '@/components/sections/FormacaoList';
-import SectionWrapper from '@/components/ui/SectionWrapper';
-import Button from '@/components/Button';
-import { ArrowRight, MapPin } from 'lucide-react';
-import { Container } from '@/components/ui/Container';
-import Image from 'next/image';
+export const metadata: Metadata = {
+  title: 'Sobre',
+  description: 'Conheça Gabriela Birger - Psicanalista, filósofa e idealizadora do com.verso.',
+}
 
-export default function Sobre() {
+export default function SobrePage() {
   return (
-    <div className="overflow-x-hidden">
-      {/* Seção 1: Hero */}
-      <section className="min-h-[60vh] flex items-center justify-center bg-creme">
-        <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-          >
-            <h1 className="font-serif text-5xl md:text-6xl lg:text-7xl font-semibold text-preto mb-4">
-              Gabriela Birger
-            </h1>
-            <p className="font-sans text-2xl md:text-3xl text-preto/60">
-              Psicanalista
-            </p>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Seção 2: Bio Completa */}
-      <SectionWrapper background="transparent">
-        <BioSection />
-      </SectionWrapper>
-
-      {/* Seção 3: Formação */}
-      <SectionWrapper background="creme">
-        <FormacaoList />
-      </SectionWrapper>
-
-      {/* Seção 4: Consultório */}
-      <section className="py-12 md:py-20 bg-creme">
+    <>
+      {/* Hero */}
+      <section className="pt-8 md:pt-12 pb-12 md:pb-16 bg-[var(--creme)]">
         <Container>
           <div className="max-w-4xl mx-auto">
+            <div className="text-center mb-10">
+              <p className="text-sm tracking-[0.25em] uppercase text-[var(--terracota)] mb-3">
+                Sobre
+              </p>
+              <h1 className="font-serif text-3xl md:text-4xl lg:text-5xl mb-4">
+                Gabriela Birger
+              </h1>
+              <p className="text-[var(--preto)]/60">
+                Psicanalista • Filósofa • Idealizadora do com.verso
+              </p>
+            </div>
+            
+            {/* Foto */}
+            <div className="flex justify-center mb-10">
+              <div className="relative w-56 md:w-64 aspect-[3/4] rounded-xl overflow-hidden">
+                <Image
+                  src="/images/gabriela-birger.jpg"
+                  alt="Gabriela Birger"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+            </div>
+            
+            {/* Bio */}
+            <div className="max-w-2xl mx-auto space-y-4 text-center">
+              <p className="text-[var(--preto)]/70 leading-relaxed">
+                Psicanalista, formada em Filosofia e em Direito pela USP e pós-graduada em Psicanálise pelo Instituto Sedes Sapientiae. Idealizadora do com.verso, um espaço de reflexão que integra psicanálise, filosofia e vinho.
+              </p>
+              <p className="text-[var(--preto)]/70 leading-relaxed">
+                Atua em consultório particular em São Paulo, atendendo presencialmente e online. Sua prática clínica é orientada pela escuta singular de cada sujeito e suas questões.
+              </p>
+            </div>
+          </div>
+        </Container>
+      </section>
+      
+      {/* Formação */}
+      <section className="py-12 md:py-16 bg-[var(--creme-escuro)]">
+        <Container>
+          <div className="max-w-2xl mx-auto">
+            <h2 className="font-serif text-2xl md:text-3xl text-center mb-8">
+              Formação
+            </h2>
+            <div className="space-y-4">
+              <div className="bg-white p-5 rounded-lg">
+                <p className="font-medium mb-1">Psicanálise</p>
+                <p className="text-[var(--preto)]/60 text-sm">Instituto Sedes Sapientiae</p>
+              </div>
+              <div className="bg-white p-5 rounded-lg">
+                <p className="font-medium mb-1">Filosofia</p>
+                <p className="text-[var(--preto)]/60 text-sm">Universidade de São Paulo (USP)</p>
+              </div>
+              <div className="bg-white p-5 rounded-lg">
+                <p className="font-medium mb-1">Direito</p>
+                <p className="text-[var(--preto)]/60 text-sm">Universidade de São Paulo (USP)</p>
+              </div>
+            </div>
+          </div>
+        </Container>
+      </section>
+      
+      {/* Consultório */}
+      <section className="py-12 md:py-16 bg-[var(--creme)]">
+        <Container>
+          <div className="max-w-3xl mx-auto">
             <h2 className="font-serif text-2xl md:text-3xl text-center mb-4">
               Consultório
             </h2>
-            <div className="flex flex-col items-center gap-1 text-preto/60 mb-10">
+            <div className="flex flex-col items-center gap-1 text-[var(--preto)]/60 mb-8">
               <div className="flex items-center gap-2">
                 <MapPin className="w-4 h-4" />
                 <p className="text-sm">
@@ -57,7 +94,7 @@ export default function Sobre() {
               <p className="text-sm">São Paulo - SP, 04532-010</p>
             </div>
             
-            <div className="grid grid-cols-2 gap-4 md:gap-6 max-w-2xl mx-auto">
+            <div className="grid grid-cols-2 gap-4 max-w-xl mx-auto">
               {[1, 2].map((num) => (
                 <div 
                   key={num} 
@@ -73,15 +110,15 @@ export default function Sobre() {
               ))}
             </div>
             
-            <div className="text-center mt-10">
-              <p className="text-preto/60 mb-4">
+            <div className="text-center mt-8">
+              <p className="text-[var(--preto)]/60 text-sm mb-4">
                 Atendimento presencial e online
               </p>
               <a
                 href="https://wa.me/5511982925279"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-6 py-3 bg-preto text-white text-sm tracking-wider rounded-lg hover:bg-terracota transition-all duration-300"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-[var(--preto)] text-white text-sm tracking-wider rounded-lg hover:bg-[var(--terracota)] transition-all duration-300"
               >
                 Agendar consulta
               </a>
@@ -89,6 +126,6 @@ export default function Sobre() {
           </div>
         </Container>
       </section>
-    </div>
-  );
+    </>
+  )
 }

@@ -23,8 +23,8 @@ const contactMethods = [
   },
   {
     icon: MapPin,
-    label: 'Localização',
-    value: 'São Paulo, SP',
+    label: 'Consultório',
+    value: 'Rua Dr. Guilherme Bannitz, 126 - CJ 82\nVila Nova Conceição\nSão Paulo - SP, 04532-010\nAtendimento presencial e online',
     href: null,
   },
 ];
@@ -47,7 +47,7 @@ export function ContactInfo() {
                 <p className="text-sm font-sans font-medium text-[#1A1A1A]/50 mb-1">
                   {method.label}
                 </p>
-                <p className="text-base font-sans text-[#1A1A1A] group-hover:text-[#C4836D] transition-colors">
+                <p className="text-base font-sans text-[#1A1A1A] group-hover:text-[#C4836D] transition-colors whitespace-pre-line">
                   {method.value}
                 </p>
               </div>

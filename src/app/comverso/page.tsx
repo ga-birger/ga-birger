@@ -1,114 +1,156 @@
-'use client';
+import { Metadata } from 'next'
+import { Container } from '@/components/ui/Container'
+import Image from 'next/image'
+import { Instagram } from 'lucide-react'
 
-import { motion } from 'framer-motion';
-import Pilares from '@/components/sections/Pilares';
-import SectionWrapper from '@/components/ui/SectionWrapper';
-import Button from '@/components/Button';
-import { Instagram } from 'lucide-react';
+export const metadata: Metadata = {
+  title: 'com.verso',
+  description: 'O com.verso é um espaço dedicado à reflexão e ao diálogo qualificado sobre temas contemporâneos, cultura e comportamento.',
+}
 
-export default function ComVerso() {
+export default function ComversoPage() {
   return (
-    <div className="overflow-x-hidden">
-      {/* Seção 1: Hero */}
-      <section className="relative min-h-[60vh] flex items-center justify-center bg-creme overflow-hidden">
-        {/* Asterisco decorativo */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.8, rotate: -10 }}
-          animate={{ opacity: 0.05, scale: 1, rotate: 0 }}
-          transition={{ duration: 1 }}
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-preto text-[300px] md:text-[400px] font-serif pointer-events-none"
-          aria-hidden="true"
-        >
-          *
-        </motion.div>
-
-        <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20 text-center relative z-10">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.3 }}
-          >
-            <h1 className="font-serif text-6xl md:text-7xl lg:text-8xl font-semibold text-preto mb-6">
+    <>
+      {/* Hero com símbolo */}
+      <section className="pt-8 md:pt-12 pb-12 md:pb-20 bg-[var(--preto)] text-white">
+        <Container>
+          <div className="max-w-4xl mx-auto text-center">
+            {/* Símbolo 02 */}
+            <div className="flex justify-center mb-8">
+              <Image
+                src="/images/brand/simbolos-02.png"
+                alt="com.verso"
+                width={200}
+                height={200}
+                className="w-32 md:w-40 h-auto invert opacity-90"
+              />
+            </div>
+            
+            <p className="text-sm tracking-[0.25em] uppercase text-[var(--mostarda)] mb-4">
+              Projeto
+            </p>
+            <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl mb-6">
               com.verso
             </h1>
-            <p className="font-sans text-xl md:text-2xl lg:text-3xl text-preto/70 tracking-wide">
-              conexões • psicanálise • bons vinhos
+            <p className="text-lg text-white/70 leading-relaxed mb-8 max-w-2xl mx-auto">
+              Um espaço dedicado à reflexão e ao diálogo qualificado sobre temas contemporâneos, cultura e comportamento. Integrando filosofia, psicanálise e vinho.
             </p>
-          </motion.div>
-        </div>
+            <a
+              href="https://www.instagram.com/_com.verso_"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-white text-[var(--preto)] text-sm tracking-wider rounded-lg hover:bg-[var(--mostarda)] transition-all duration-300"
+            >
+              <Instagram className="w-4 h-4" />
+              Acompanhe no Instagram
+            </a>
+          </div>
+        </Container>
       </section>
-
-      {/* Seção 2: O que é */}
-      <SectionWrapper background="transparent">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-100px' }}
-          transition={{ duration: 0.6 }}
-          className="max-w-4xl mx-auto"
-        >
-          <h2 className="font-serif text-4xl md:text-5xl font-semibold text-preto mb-8 text-center">
-            O que é o com.verso?
-          </h2>
-
-          <div className="space-y-6">
-            <p className="font-sans text-lg md:text-xl text-preto/80 leading-relaxed text-center">
-              Idealizado em 2023, o com.verso é um espaço dedicado à reflexão e
-              ao diálogo qualificado sobre temas contemporâneos, cultura e
-              comportamento, integrando referências da filosofia e da
-              psicanálise.
-            </p>
-            <p className="font-sans text-lg md:text-xl text-preto/80 leading-relaxed text-center">
-              Diferentemente de aulas ou palestras tradicionais, o com.verso
-              propõe encontros presenciais que incentivam a troca, a escuta e o
-              pensamento crítico em um ambiente acolhedor e descontraído — onde
-              uma taça de vinho costuma acompanhar as conversas.
-            </p>
-            <p className="font-sans text-lg md:text-xl text-preto/80 leading-relaxed text-center">
-              Os encontros são realizados mensalmente em São Paulo, e a
-              programação completa pode ser consultada no Instagram do projeto,
-              que também reúne textos, reflexões e ensaios produzidos ao longo
-              das discussões.
-            </p>
+      
+      {/* Símbolo 04 - comFILOSOFIA etc */}
+      <section className="py-12 md:py-20 bg-[var(--creme)]">
+        <Container>
+          <div className="flex justify-center">
+            <Image
+              src="/images/brand/simbolos-04.png"
+              alt="comFILOSOFIA, comPSICANÁLISE, comVINHO, com.verso"
+              width={600}
+              height={400}
+              className="w-full max-w-md md:max-w-lg h-auto"
+            />
           </div>
-        </motion.div>
-      </SectionWrapper>
-
-      {/* Seção 3: Pilares */}
-      <SectionWrapper background="creme">
-        <Pilares />
-      </SectionWrapper>
-
-      {/* Seção 4: CTA Instagram */}
-      <SectionWrapper background="preto">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-100px' }}
-          transition={{ duration: 0.6 }}
-          className="text-center max-w-3xl mx-auto"
-        >
-          <div className="mb-8">
-            <Instagram size={64} className="mx-auto mb-6 text-branco/80" />
+        </Container>
+      </section>
+      
+      {/* Sobre o projeto */}
+      <section className="py-12 md:py-20 bg-[var(--creme-escuro)]">
+        <Container>
+          <div className="max-w-3xl mx-auto">
+            <h2 className="font-serif text-2xl md:text-3xl text-center mb-8">
+              Sobre o projeto
+            </h2>
+            <div className="space-y-6 text-[var(--preto)]/70 leading-relaxed">
+              <p>
+                O com.verso nasceu em 2023 como um espaço de encontro e reflexão. Mensalmente, reunimos um público qualificado em São Paulo para conversas que atravessam a psicanálise, a filosofia e a cultura contemporânea — sempre acompanhadas de bons vinhos.
+              </p>
+              <p>
+                Cada edição aborda um tema específico, convidando os participantes a pensar sobre questões que atravessam a vida cotidiana: relações, trabalho, corpo, desejo, tempo e tantas outras.
+              </p>
+              <p>
+                Mais do que um evento, o com.verso é uma experiência de escuta e diálogo, um espaço para pausar e refletir em meio à aceleração do mundo contemporâneo.
+              </p>
+            </div>
           </div>
-
-          <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl font-semibold mb-6">
-            Acompanhe a programação
-          </h2>
-          <p className="font-sans text-lg md:text-xl text-branco/90 leading-relaxed mb-10">
-            Os próximos encontros e conteúdos exclusivos estão no Instagram.
-          </p>
-          <Button
-            href="https://www.instagram.com/_com.verso_"
-            target="_blank"
-            variant="outline"
-            size="lg"
-          >
-            <Instagram size={24} />
-            Seguir @_com.verso_
-          </Button>
-        </motion.div>
-      </SectionWrapper>
-    </div>
-  );
+        </Container>
+      </section>
+      
+      {/* Os três pilares com símbolo 03 */}
+      <section className="py-12 md:py-20 bg-[var(--creme)]">
+        <Container>
+          <div className="max-w-4xl mx-auto">
+            <h2 className="font-serif text-2xl md:text-3xl text-center mb-12">
+              Os três pilares
+            </h2>
+            
+            {/* Símbolo do triângulo */}
+            <div className="flex justify-center mb-12">
+              <Image
+                src="/images/brand/simbolos-03.png"
+                alt="Filosofia, Psicanálise e Vinho"
+                width={500}
+                height={400}
+                className="w-full max-w-sm md:max-w-md h-auto"
+              />
+            </div>
+            
+            {/* Descrições */}
+            <div className="grid md:grid-cols-3 gap-8 text-center">
+              <div>
+                <h3 className="font-serif text-xl mb-3">Filosofia</h3>
+                <p className="text-[var(--preto)]/60 text-sm">
+                  O pensamento crítico como ferramenta de compreensão do mundo e de nós mesmos.
+                </p>
+              </div>
+              <div>
+                <h3 className="font-serif text-xl mb-3">Psicanálise</h3>
+                <p className="text-[var(--preto)]/60 text-sm">
+                  A escuta do inconsciente e suas manifestações na vida cotidiana.
+                </p>
+              </div>
+              <div>
+                <h3 className="font-serif text-xl mb-3">Vinho</h3>
+                <p className="text-[var(--preto)]/60 text-sm">
+                  O ritual do encontro, a celebração da conversa e do convívio.
+                </p>
+              </div>
+            </div>
+          </div>
+        </Container>
+      </section>
+      
+      {/* CTA Final */}
+      <section className="py-12 md:py-20 bg-[var(--terracota)] text-white">
+        <Container>
+          <div className="max-w-2xl mx-auto text-center">
+            <h2 className="font-serif text-2xl md:text-3xl mb-4">
+              Participe do próximo encontro
+            </h2>
+            <p className="text-white/80 mb-8">
+              Acompanhe o Instagram para saber das próximas edições e garantir sua vaga.
+            </p>
+            <a
+              href="https://www.instagram.com/_com.verso_"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-white text-[var(--preto)] text-sm tracking-wider rounded-lg hover:bg-[var(--mostarda)] transition-all duration-300"
+            >
+              <Instagram className="w-4 h-4" />
+              @_com.verso_
+            </a>
+          </div>
+        </Container>
+      </section>
+    </>
+  )
 }
