@@ -6,35 +6,29 @@ import Link from 'next/link'
 import { FileText, ArrowRight, Download } from 'lucide-react'
 
 const monografias = [
-  {
-    title: 'Monografia I',
+  { 
     subtitle: 'A importância do sintoma para o tratamento psicanalítico como elemento constituinte da personalidade do sujeito',
-    file: '/docs/monografia-1.pdf',
+    file: '/docs/monografia-1.pdf' 
   },
-  {
-    title: 'Monografia II',
+  { 
     subtitle: 'A queda da racionalidade com a descoberta do inconsciente',
-    file: '/docs/monografia-2.pdf',
+    file: '/docs/monografia-2.pdf' 
   },
-  {
-    title: 'Monografia III',
+  { 
     subtitle: 'O eu entendido como colcha de retalhos de precipitados identificatórios',
-    file: '/docs/monografia-3.pdf',
+    file: '/docs/monografia-3.pdf' 
   },
-  {
-    title: 'Monografia IV',
+  { 
     subtitle: 'Projeto e projeções: a dificuldade integrativa frente à ambivalência pulsional',
-    file: '/docs/monografia-4.pdf',
+    file: '/docs/monografia-4.pdf' 
   },
-  {
-    title: 'Monografia V',
+  { 
     subtitle: 'Onde a mente emudece, o corpo soçobra – a importância da elaboração psíquica',
-    file: '/docs/monografia-5.pdf',
+    file: '/docs/monografia-5.pdf' 
   },
-  {
-    title: 'Monografia VI',
+  { 
     subtitle: 'O analista é aquele que (sobre)vive',
-    file: '/docs/monografia-6.pdf',
+    file: '/docs/monografia-6.pdf' 
   },
 ]
 
@@ -71,20 +65,14 @@ export function MonografiasSection() {
                 href={mono.file}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-start gap-4 p-5 bg-white/10 rounded-lg hover:bg-white/20 transition-all group"
+                className="group flex items-start gap-4 p-5 bg-white/10 rounded-lg hover:bg-white/20 transition-all border-l-2 border-transparent hover:border-[var(--mostarda)]"
               >
-                <div className="w-12 h-12 rounded-lg bg-[var(--mostarda)]/20 flex items-center justify-center flex-shrink-0 mt-1">
+                <div className="w-10 h-10 rounded-lg bg-[var(--mostarda)]/20 flex items-center justify-center flex-shrink-0">
                   <FileText className="w-5 h-5 text-[var(--mostarda)]" />
                 </div>
-                <div className="flex-1 min-w-0">
-                  <p className="font-medium text-white group-hover:text-[var(--mostarda)] transition-colors mb-1">
-                    {mono.title}
-                  </p>
-                  <p className="text-white/50 text-sm leading-relaxed line-clamp-2">
-                    {mono.subtitle}
-                  </p>
-                </div>
-                <Download className="w-4 h-4 text-white/30 group-hover:text-[var(--mostarda)] transition-colors flex-shrink-0 mt-1" />
+                <p className="text-white/80 text-sm leading-relaxed group-hover:text-[var(--mostarda)] transition-colors line-clamp-2">
+                  {mono.subtitle}
+                </p>
               </a>
             ))}
           </div>

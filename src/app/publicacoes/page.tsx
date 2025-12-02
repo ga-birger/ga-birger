@@ -9,32 +9,26 @@ export const metadata: Metadata = {
 
 const monografias = [
   { 
-    title: 'Monografia I', 
     subtitle: 'A importância do sintoma para o tratamento psicanalítico como elemento constituinte da personalidade do sujeito',
     file: '/docs/monografia-1.pdf' 
   },
   { 
-    title: 'Monografia II', 
     subtitle: 'A queda da racionalidade com a descoberta do inconsciente',
     file: '/docs/monografia-2.pdf' 
   },
   { 
-    title: 'Monografia III', 
     subtitle: 'O eu entendido como colcha de retalhos de precipitados identificatórios',
     file: '/docs/monografia-3.pdf' 
   },
   { 
-    title: 'Monografia IV', 
     subtitle: 'Projeto e projeções: a dificuldade integrativa frente à ambivalência pulsional',
     file: '/docs/monografia-4.pdf' 
   },
   { 
-    title: 'Monografia V', 
     subtitle: 'Onde a mente emudece, o corpo soçobra – a importância da elaboração psíquica',
     file: '/docs/monografia-5.pdf' 
   },
   { 
-    title: 'Monografia VI', 
     subtitle: 'O analista é aquele que (sobre)vive',
     file: '/docs/monografia-6.pdf' 
   },
@@ -60,32 +54,29 @@ export default function PublicacoesPage() {
         </Container>
       </section>
       
-      {/* Monografias PRIMEIRO */}
+      {/* Monografias */}
       <section className="py-12 md:py-16 bg-[var(--creme-escuro)]">
         <Container>
-          <div className="max-w-4xl mx-auto">
+          <div className="max-w-3xl mx-auto">
             <h2 className="font-serif text-2xl md:text-3xl text-center mb-10">
               Monografias
             </h2>
-            <div className="grid md:grid-cols-2 gap-4">
+            <div className="space-y-4">
               {monografias.map((mono, index) => (
                 <a
                   key={index}
                   href={mono.file}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-start gap-4 p-5 bg-white rounded-lg hover:shadow-md transition-all group"
+                  className="group block p-6 bg-white rounded-lg hover:shadow-md transition-all border-l-4 border-transparent hover:border-[var(--terracota)]"
                 >
-                  <div className="w-12 h-12 rounded-lg bg-[var(--rosa-claro)] flex items-center justify-center flex-shrink-0">
-                    <FileText className="w-5 h-5 text-[var(--terracota)]" />
-                  </div>
-                  <div className="flex-1 min-w-0">
-                    <p className="font-medium group-hover:text-[var(--terracota)] transition-colors mb-1">
-                      {mono.title}
-                    </p>
-                    <p className="text-[var(--preto)]/60 text-sm leading-relaxed line-clamp-2">
+                  <div className="flex items-center justify-between gap-4">
+                    <p className="text-[var(--preto)]/80 leading-relaxed group-hover:text-[var(--terracota)] transition-colors">
                       {mono.subtitle}
                     </p>
+                    <div className="flex-shrink-0 w-10 h-10 rounded-full bg-[var(--rosa-claro)] flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                      <FileText className="w-5 h-5 text-[var(--terracota)]" />
+                    </div>
                   </div>
                 </a>
               ))}

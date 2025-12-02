@@ -62,24 +62,49 @@ export default function PodcastPage() {
         </Container>
       </section>
       
-      {/* Player principal - mostra o show completo */}
+      {/* Player com episódios - igual da Home */}
       <section className="py-12 md:py-16 bg-creme">
         <Container>
-          <div className="max-w-3xl mx-auto">
+          <div className="max-w-4xl mx-auto">
             <h2 className="font-serif text-2xl md:text-3xl text-center mb-8">
               Últimos episódios
             </h2>
-            <div className="rounded-lg overflow-hidden shadow-lg">
-              <iframe
-                src="https://open.spotify.com/embed/show/3NZGaOQD79tO12wuOhLZf9?utm_source=generator&theme=0"
-                width="100%"
-                height="352"
-                frameBorder="0"
-                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-                loading="lazy"
-                className="w-full"
-              />
+            
+            <div className="flex gap-4 overflow-x-auto pb-4 scrollbar-hide" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
+              {/* Episódio principal - Luciana */}
+              <div className="flex-shrink-0 w-full md:w-[60%]">
+                <div className="rounded-lg overflow-hidden shadow-lg">
+                  <iframe
+                    src="https://open.spotify.com/embed/episode/5uFuV3dK8DPZaYJF08F47Y?utm_source=generator&theme=0"
+                    width="100%"
+                    height="352"
+                    frameBorder="0"
+                    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                    loading="lazy"
+                    className="w-full"
+                  />
+                </div>
+              </div>
+              
+              {/* Episódio secundário - Guilherme */}
+              <div className="flex-shrink-0 w-full md:w-[38%]">
+                <div className="rounded-lg overflow-hidden shadow-lg">
+                  <iframe
+                    src="https://open.spotify.com/embed/episode/0Hul30JiwaiqT4Ci1sLfz0?utm_source=generator&theme=0"
+                    width="100%"
+                    height="352"
+                    frameBorder="0"
+                    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                    loading="lazy"
+                    className="w-full"
+                  />
+                </div>
+              </div>
             </div>
+            
+            <p className="text-center text-preto/40 text-xs mt-2 md:hidden">
+              ← Deslize para ver mais →
+            </p>
           </div>
         </Container>
       </section>
@@ -92,7 +117,7 @@ export default function PodcastPage() {
               Participações especiais
             </h2>
             <p className="text-preto/70 leading-relaxed mb-8 text-center">
-              Além do com.verso, Gabriela participou de outros podcasts e apareceu na mídia.
+              A seguir, outros podcasts e mídias com participação de Gabriela:
             </p>
             
             <div className="space-y-4">
@@ -135,7 +160,7 @@ export default function PodcastPage() {
                     Participação em Podcast
                   </p>
                   <p className="text-preto/60 text-sm">
-                    Episódio especial sobre psicanálise e cultura
+                    Episódio especial sobre amor e ódio
                   </p>
                 </div>
               </a>
