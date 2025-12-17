@@ -51,7 +51,7 @@ export default function Hero() {
             </h1>
 
             <p className="text-[var(--terracota)] tracking-[0.25em] uppercase text-sm mb-6">
-              Psicanalista • Filósofa • Idealizadora do com.verso
+              Psicanalista • Idealizadora do com.verso • Consultoria de Liderança e Saúde Mental
             </p>
 
             <p className="text-lg text-[var(--preto)]/60 mb-10 leading-relaxed">

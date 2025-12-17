@@ -48,7 +48,8 @@ export default function SobrePage() {
                 Formou-se em psicanálise pelo Centro de Estudos Psicanalíticos, pelo Instituto Sedes Sapientiae e pelo Instituto de Psiquiatria da USP. É Associate Coach certificada pelo NeuroLeadership Institute, em Nova York.
               </p>
               <p className="text-[var(--preto)]/70 leading-relaxed">
-                Atende como psicanalista em consultório particular, além de prestar consultoria em saúde mental e liderança para organizações. Além disso, é a idealizadora do com.verso.
+              Atende adolescentes, adultos, casais e famílias em consultório particular, além de prestar consultoria em saúde mental e liderança para organizações. 
+              Além disso, é a idealizadora do com.verso, um espaço dedicado à promoção de encontros e discussões de temas da atualidade.
               </p>
             </div>
           </div>
